@@ -1,0 +1,46 @@
+we have 3 pages 
+new diet program => new-diet 
+manage food table => food-table 
+view existing programs => view-programs
+
+
+manage food table :
+
+food : array of object {name , image , amont , calories }
+functionality : 
+- view a table that contains all existing foods
+- home button that goes back to the root page 
+- add new food button 
+- the feature to edit any one of the existing food types 
+- the feature to delete any one of the existing food types 
+
+
+view existing programs :
+
+programs : array of objects (patient , total calories }
+- home button that goes back to the root page 
+- search bar that searches by the name of the patient
+- view a table that contains the name of the patient and total calories
+- the feature of deleting any diet program
+// needs some researches , the last thing to do 
+- the feature of converting its diet program to pdf file  
+
+
+ 
+new diet program : 
+
+patient program : object {
+				patient info : {name , phone , email , date of birth , city} 
+				program : array of object {day , array of food} }
+- form contains : name (text) , phone (number) , email (email) , date of birth (date picker) ,
+			city (select)
+- days of the week as a radio buttons 
+- div contains the meals depending on what day (radio button) is clicked 
+- view the total calories of that day & number of meals 
+
+
+components : 
+- patient form 
+- view meal 
+- food row 
+- program row 
