@@ -1,0 +1,18 @@
+.header {
+    background-color: rgb(27, 109, 87);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.header > .title {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.header > .title > img {
+    width: 50px;
+    margin-right: 10px;
+}
