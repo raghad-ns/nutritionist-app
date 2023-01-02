@@ -15,6 +15,10 @@
     font-size: 30px;
     text-transform: capitalize;
 }
+.header > button {
+    background: none;
+    border: none;
+}
 .header > .title > img {
     width: 50px;
     margin-right: 10px;

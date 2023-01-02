@@ -9,13 +9,13 @@ import ViewPrograms from './pages/view-programs/view-programs.page';
 function App() {
   return (
     <div className="App">
-      <Header/>
       <BrowserRouter>
+        <Header homeIcon={true} />
         <Routes>
-          <Route path = "/" element= {<Home/>}/>
-          <Route path = "/foodTable" element= {<FoodTable/>}/>
-          <Route path = "/viewPrograms" element= {<ViewPrograms/>}/>
-          <Route path = "/add" element= {<Add/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/foodTable" element={<FoodTable />} />
+          <Route path="/viewPrograms" element={<ViewPrograms />} />
+          <Route path="/add" element={<Add />} />
         </Routes>
       </BrowserRouter>
     </div>
