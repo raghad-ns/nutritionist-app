@@ -3,22 +3,34 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
     position: sticky;
     top: 0px;
     z-index: 1;
+    color: white;
 }
+
 .header > .title {
     display: flex;
-    justify-content: space-between;
-    color: white;
+    justify-content: flex-start;
     font-weight: 600;
     font-size: 30px;
     text-transform: capitalize;
+    font-style: italic;
 }
+
+.header > .title > .pageName {
+    margin-top: 6px;
+    font-size: 25px;
+}
+
 .header > button {
     background: none;
-    border: none;
+    border: none; 
+    justify-self: flex-end;
 }
+
 .header > .title > img {
     width: 50px;
     margin-right: 10px;
