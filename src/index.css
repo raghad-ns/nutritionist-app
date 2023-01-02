@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:wght@700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Andika', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.homePageButtons {
+  padding: 5px 10px;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Andika', sans-serif;
+  text-transform: capitalize;
+  font-style: italic;
+  outline: none;
+  border: none;
+  background-color: rgb(84, 209, 176);
+  opacity: 0.8;
+  color: white;
+  border-radius: 20px;
+  width: 450px;
+  height: 75px;
 }

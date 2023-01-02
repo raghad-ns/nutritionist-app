@@ -1,0 +1,29 @@
+.home > img {
+    max-width: 500px;
+}
+.home {
+    background-image: url('../../assets/home-background.webp');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px;
+    justify-content: center;
+}
+.home > .intro {
+    background-size: cover;
+    column-gap: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px;
+    height: 300px;
+    justify-content: space-around;
+}
+.home > .intro {
+    margin: 200px;
+}
