@@ -1,0 +1,20 @@
+
+.foodTable > table {
+    width: 90%;
+    margin: 0 auto;
+    margin: 20px;
+    padding: 10px;
+}
+.foodTable > table > thead > tr > th {
+    background-color: rgba(36, 141, 113, 0.714);
+    color: white;
+    text-transform: capitalize;
+    margin: 30px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.foodTable > table > tbody > tr > td {
+    height: 45px;
+    border-bottom: 1px dashed #bbb;
+}
