@@ -1,13 +1,13 @@
 import React from 'react'
 import './food-row.css'
 
-const FoodRow = () => {
+const FoodRow = (props) => {
     return (
-        <tr>
-            <td>food</td>
-            <td>image</td>
-            <td>amount</td>
-            <td>calories</td>
+        <tr className='foodRow'>
+            <td>{props.data.name}</td>
+            <td> <img src={props.data.image} alt={props.data.name} /></td>
+            <td>{props.data.amount}</td>
+            <td>{props.data.calories}</td>
             <td>action</td>
         </tr>
     )

@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Plus } from 'phosphor-react'
 import './food-table.css'
 import FoodRow from '../../components/food-table/food-row/food-row.component'
 import AddFood from '../../components/food-table/add-food/add-food.component'
+import { FoodContext } from '../../components/providers/food.provider'
 
 const FoodTable = () => {
     
     const [add , setAdd] = useState(false);
+    const foodContext = useContext (FoodContext);
     
     return (
         <div className='foodTable'>
@@ -25,10 +27,7 @@ const FoodTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <FoodRow />
-                    <FoodRow />
-                    <FoodRow />
-                    <FoodRow />
+                    {foodContext.food.map((foodItem , index) => <FoodRow key={index} data = {foodItem}/>)}
                 </tbody>
             </table>
         </div>
