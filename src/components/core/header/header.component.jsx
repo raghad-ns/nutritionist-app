@@ -12,8 +12,8 @@ const Header = () => {
                 <img src={logo} alt="logo" />
                 <span>Nutrition Clinic Manager </span>
                 {(window.location.pathname === "/add") && <span className='pageName'>&nbsp; - new diet program</span>}
-                {(window.location.pathname === "/viewPrograms") && <span className='pageName'>&nbsp; - new diet program</span>}
-                {(window.location.pathname === "/foodTable") && <span className='pageName'>&nbsp; - new diet program</span>}
+                {(window.location.pathname === "/viewPrograms") && <span className='pageName'>&nbsp; - existing programs</span>}
+                {(window.location.pathname === "/foodTable") && <span className='pageName'>&nbsp; - food table</span>}
             </div>
 
             {

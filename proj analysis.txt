@@ -44,3 +44,6 @@ components :
 - view meal 
 - food row 
 - program row 
+
+
+foodTable must have a reducer to (add  , delete , edit)

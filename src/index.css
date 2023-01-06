@@ -47,13 +47,13 @@ body {
 .innerButton {
   font-size: 20px;
   height: 30px;
-  color: white;
+  color: rgba(255, 255, 255, 0.871);
   background-color: rgb(27, 109, 87);
   border: none;
   height: 35px;
   padding: 5px 10px;
   width: fit-content;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .innerButton:hover {

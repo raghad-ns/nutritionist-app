@@ -1,10 +1,34 @@
 
+.foodTable{
+    position: relative;
+    margin: 0;
+}
+
+.blur {
+    filter: blur(8px);
+}
+
+.foodTable > .addFoodWrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 99999;
+}
+
 .foodTable > table {
     width: 90%;
     margin: 0 auto;
     margin: 20px;
     padding: 10px;
 }
+
 .foodTable > table > thead > tr > th {
     background-color: rgba(36, 141, 113, 0.714);
     color: white;
