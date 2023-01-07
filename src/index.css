@@ -59,3 +59,7 @@ body {
   box-shadow: 1px 1px 3px 1px rgba(27, 109, 87, 0.382);
   transition: all 0.1s ease-in-out;
 }
+
+button {
+  cursor: pointer;
+}
