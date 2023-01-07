@@ -29,7 +29,7 @@ const reducer = (food, action) => {
         case "EDIT":
             return food.map(foodItem => foodItem.id === action.food.id ? action.food : foodItem)
         case "DELETE":
-            return food.filter(foodItem => foodItem.id !== action.food.id)
+            return food.filter(foodItem => foodItem.id !== action.id)
         default:
             break
     }

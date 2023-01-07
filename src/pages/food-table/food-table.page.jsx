@@ -6,17 +6,17 @@ import AddFood from '../../components/food-table/add-food/add-food.component'
 import { FoodContext } from '../../components/providers/food.provider'
 
 const FoodTable = () => {
-    
-    const [add , setAdd] = useState(false);
-    const foodContext = useContext (FoodContext);
-    
+
+    const [add, setAdd] = useState(false);
+    const foodContext = useContext(FoodContext);
+
     return (
         <div className='foodTable'>
-            {add && <div className="addFoodWrapper"><AddFood setAdd = {setAdd}/></div>} 
-            <div className={add? 'innerButtonWrapper blur' : 'innerButtonWrapper'} >
-                <button className='innerButton' onClick={()=> setAdd(oldAdd => true)}>Add <Plus size={18} weight='bold' /></button>
+            {add && <div className="addFoodWrapper"><AddFood setAdd={setAdd} /></div>}
+            <div className={add ? 'innerButtonWrapper blur' : 'innerButtonWrapper'} >
+                <button className='innerButton' onClick={() => setAdd(oldAdd => true)}>Add <Plus size={18} weight='bold' /></button>
             </div>
-            <table cellSpacing={15} className={add? 'blur' : ''}>
+            <table cellSpacing={15} className={add ? 'blur' : ''}>
                 <thead>
                     <tr>
                         <th>food</th>
@@ -27,7 +27,8 @@ const FoodTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {foodContext.food.map((foodItem , index) => <FoodRow key={index} data = {foodItem}/>)}
+                    {foodContext.food.map((foodItem, index) =>
+                        <FoodRow key={index} data={foodItem} add = {add} setAdd = {setAdd} />)}
                 </tbody>
             </table>
         </div>

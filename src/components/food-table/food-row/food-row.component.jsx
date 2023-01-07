@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './food-row.css'
-import { PencilSimple , TrashSimple } from 'phosphor-react'
+import { PencilSimple, TrashSimple } from 'phosphor-react'
+import { FoodContext } from '../../providers/food.provider'
 
 const FoodRow = (props) => {
+    const foodContext = useContext(FoodContext);
+    const deleteFood = () => {
+        foodContext.dispatch({ type: 'DELETE', id: props.data.id })
+    }
     return (
         <tr className='foodRow'>
             <td>{props.data.name}</td>
@@ -11,11 +16,11 @@ const FoodRow = (props) => {
             <td>{props.data.calories}</td>
             <td>
                 <div className="action">
-                    <button>
+                    <button >
                         <PencilSimple size={25} />
                     </button>
-                    <button>
-                    <TrashSimple size={25} />
+                    <button onClick={deleteFood} >
+                        <TrashSimple size={25} color='red' />
                     </button>
                 </div>
             </td>
