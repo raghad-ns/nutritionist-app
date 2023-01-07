@@ -2,3 +2,7 @@
     width: 90px;
     border-radius: 8px;
 }
+.foodRow > td > .action > button {
+    background: none;
+    border: none;
+}

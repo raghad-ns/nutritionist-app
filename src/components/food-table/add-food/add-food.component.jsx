@@ -8,17 +8,18 @@ const AddFood = (props) => {
   const [image, setImage] = useState('');
   const [amount, setAmount] = useState(0);
   const [calories, setCalories] = useState(0);
-  const foodContext = useContext (FoodContext) ;
+  const foodContext = useContext(FoodContext);
+  
   const addFood = () => {
-    const date = Date.now() ;
+    const date = Date.now();
     const tempFood = {
-      id : date , 
-      name : name , 
-      image : image ,
-      amount : amount , 
-      calories : calories
+      id: date,
+      name: name,
+      image: image,
+      amount: amount,
+      calories: calories
     };
-    foodContext.setFood([...foodContext.food , tempFood])
+    foodContext.dispatch({ type: 'ADD', food: tempFood })
     props.setAdd(false);
   }
 
