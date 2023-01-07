@@ -5,6 +5,7 @@ import FoodProvider from './components/providers/food.provider';
 import Add from './pages/add/add.page';
 import FoodTable from './pages/food-table/food-table.page';
 import Home from './pages/home/home.page';
+import NotFound from './pages/not-found/not-found';
 import ViewPrograms from './pages/view-programs/view-programs.page';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/foodTable" element={<FoodTable />} />
             <Route path="/viewPrograms" element={<ViewPrograms />} />
             <Route path="/add" element={<Add />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </FoodProvider>
