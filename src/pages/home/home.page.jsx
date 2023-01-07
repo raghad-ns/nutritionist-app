@@ -6,6 +6,8 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <div className='home'>
+            <h1>The health outside starts from the inside</h1>
+            <div className="blur"></div>
             <div className="intro">
                 <button className="homePageButtons"
                     onClick={() => navigate('/viewPrograms')}>

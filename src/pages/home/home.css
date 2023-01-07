@@ -1,29 +1,43 @@
-.home > img {
-    max-width: 500px;
-    max-height: 1000px;
+.home>h1 {
+    position: fixed;
+    bottom: 610px;
+    left: 50px;
+    font-size: 35px;
+    color: rgb(27, 109, 87);
+    font-style: italic;
+    font-weight: 100;
+    z-index: 1;
 }
+
+.home > .blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    position: fixed;
+}
+
 .home {
-    background-image: url('../../assets/foodBg.png');
+    background-image: url('../../assets/wallpeaper.jpg');
     background-position: initial;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 91vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
-.home > .intro {
+
+.home>.intro {
     background-color: rgba(84, 209, 176, 0.374);
     min-height: 60%;
-    margin-left: 400px;
+    margin-left: 50px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 2px 2px 10px 2px #ccc;
-    z-index: 1;
-    background-size: cover;     
+    z-index: 2;
+    background-size: cover;
     column-gap: 10px;
-    height: 100vh;
     display: flex;
     max-width: 50%;
     flex-direction: column;
