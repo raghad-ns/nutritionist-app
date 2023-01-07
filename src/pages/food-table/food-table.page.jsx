@@ -7,16 +7,16 @@ import { FoodContext } from '../../components/providers/food.provider'
 
 const FoodTable = () => {
 
-    const [add, setAdd] = useState(false);
+    const [action, setAction] = useState({type : 'none' , data : null});
     const foodContext = useContext(FoodContext);
 
     return (
         <div className='foodTable'>
-            {add && <div className="addFoodWrapper"><AddFood setAdd={setAdd} /></div>}
-            <div className={add ? 'innerButtonWrapper blur' : 'innerButtonWrapper'} >
-                <button className='innerButton' onClick={() => setAdd(oldAdd => true)}>Add <Plus size={18} weight='bold' /></button>
+            {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action = {action} /></div>}
+            <div className={action === 'add' ? 'innerButtonWrapper blur' : 'innerButtonWrapper'} >
+                <button className='innerButton' onClick={() => setAction({type : 'add' , data : null})}>Add <Plus size={18} weight='bold' /></button>
             </div>
-            <table cellSpacing={15} className={add ? 'blur' : ''}>
+            <table cellSpacing={15} className={action.type !== 'none' ? 'blur' : ''}>
                 <thead>
                     <tr>
                         <th>food</th>
@@ -28,7 +28,7 @@ const FoodTable = () => {
                 </thead>
                 <tbody>
                     {foodContext.food.map((foodItem, index) =>
-                        <FoodRow key={index} data={foodItem} add = {add} setAdd = {setAdd} />)}
+                        <FoodRow key={index} data={foodItem} action={action} setAction={setAction} />)}
                 </tbody>
             </table>
         </div>

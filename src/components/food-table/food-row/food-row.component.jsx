@@ -16,7 +16,7 @@ const FoodRow = (props) => {
             <td>{props.data.calories}</td>
             <td>
                 <div className="action">
-                    <button >
+                    <button onClick={() => props.setAction ({type : 'edit' , data : props.data})}>
                         <PencilSimple size={25} />
                     </button>
                     <button onClick={deleteFood} >
