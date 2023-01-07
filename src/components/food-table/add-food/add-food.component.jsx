@@ -37,7 +37,7 @@ const AddFood = (props) => {
 
   return (
     <div className='addFood'>
-      <h2>Add new food type</h2>
+      <h2>{props.action.type === 'add' ? 'Add new food type' : 'edit'}</h2>
       <Input label='Food name' type='text' value={name} onChange={e => setName(e.target.value)} />
       <Input label='image' type='text' value={image} onChange={e => setImage(e.target.value)} />
       <Input label='amount (gm)' type='number' value={amount} onChange={e => setAmount(e.target.value)} />
