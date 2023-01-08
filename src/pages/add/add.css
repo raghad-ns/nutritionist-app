@@ -1,0 +1,14 @@
+.add {
+    display: flex;
+    flex-direction: column;
+}
+
+.actionButtons {
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-right: 60px;
+    margin-top: 30px;
+}
+.add > .actionButtons > .innerButton {
+    margin-left: 20px;
+}

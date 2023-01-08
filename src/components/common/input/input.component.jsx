@@ -9,7 +9,7 @@ const Input = (props) => {
   const { label, ...inputProps } = props;
 
   return (
-    <div className='input-wrapper'>
+    <div className='inputWrapper'>
       {
         label ?
           <label>

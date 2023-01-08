@@ -45,6 +45,7 @@ body {
 
 .innerButton {
   font-size: 20px;
+  text-transform: capitalize;
   height: 30px;
   color: rgba(255, 255, 255, 0.871);
   background-color: rgb(27, 109, 87);
