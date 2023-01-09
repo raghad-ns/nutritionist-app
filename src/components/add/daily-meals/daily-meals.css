@@ -1,14 +1,15 @@
 .dailyMealsWrapper {
     display: flex;
     justify-content: center;
+    width: 90%;
 }
 
 .dailyMeals {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
     padding: 10px;
-    width: 88.2%;
     height: 330px;
     border: 1px solid rgb(27, 109, 87);
     border-top: 1px solid #ccc;

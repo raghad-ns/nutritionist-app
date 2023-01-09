@@ -1,13 +1,14 @@
 .patientInfoWrapper {
     display: flex;
     justify-content: center;
+    width: 90%;
 }
 
 .patientInfoWrapper>fieldset {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 88.2%;
+    width: 100%;
     padding: 10px 10px 20px;
     border-radius: 20px;
     border: 1px solid rgb(27, 109, 87);
