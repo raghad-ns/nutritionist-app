@@ -4,10 +4,6 @@
     margin: 0;
 }
 
-.blur {
-    filter: blur(8px);
-}
-
 .foodTable > .addFoodWrapper {
     width: 100%;
     height: 100vh;

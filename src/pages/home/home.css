@@ -9,13 +9,6 @@
     z-index: 1;
 }
 
-.home > .blur {
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    position: fixed;
-}
-
 .home {
     background-image: url('../../assets/wallpeaper.jpg');
     background-position: initial;

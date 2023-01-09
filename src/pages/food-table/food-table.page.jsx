@@ -13,10 +13,10 @@ const FoodTable = () => {
     return (
         <div className='foodTable'>
             {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action = {action} /></div>}
-            <div className={action === 'add' ? 'innerButtonWrapper blur' : 'innerButtonWrapper'} >
+            <div className='innerButtonWrapper' >
                 <button className='innerButton' onClick={() => setAction({type : 'add' , data : null})}>Add <Plus size={18} weight='bold' /></button>
             </div>
-            <table cellSpacing={15} className={action.type !== 'none' ? 'blur' : ''}>
+            <table cellSpacing={15} >
                 <thead>
                     <tr>
                         <th>food</th>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Input from '../../common/input/input.component'
+import PopUp from '../../core/pop-up/pop-up.component';
 import { FoodContext } from '../../providers/food.provider';
 import './add-food.css'
 
@@ -36,7 +37,7 @@ const AddFood = (props) => {
   }
 
   return (
-    <div className='addFood'>
+    <PopUp className='addFood'>
       <h2>{props.action.type === 'add' ? 'Add new food type' : 'edit'}</h2>
       <Input label='Food name' type='text' value={name} onChange={e => setName(e.target.value)} />
       <Input label='image' type='text' value={image} onChange={e => setImage(e.target.value)} />
@@ -50,7 +51,7 @@ const AddFood = (props) => {
         }
         <button className='innerButton' onClick={() => props.setAction({type : 'none' , data : null})}>Cancel</button>
       </div>
-    </div>
+    </PopUp>
   )
 }
 
