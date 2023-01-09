@@ -1,9 +1,9 @@
-
 .patientInfoWrapper {
     display: flex;
     justify-content: center;
 }
-.patientInfoWrapper > fieldset {
+
+.patientInfoWrapper>fieldset {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
     flex-basis: 90%;
 }
 
-.patientInfoWrapper > fieldset > legend {
+.patientInfoWrapper>fieldset>legend {
     padding: 0px 15px;
     text-align: left;
     margin-left: 50px;
@@ -31,4 +31,9 @@
     color: rgb(27, 109, 87);
 }
 
-
+input[type='date']:in-range::-webkit-datetime-edit-year-field,
+input[type='date']:in-range::-webkit-datetime-edit-month-field,
+input[type='date']:in-range::-webkit-datetime-edit-day-field,
+input[type='date']:in-range::-webkit-datetime-edit-text {
+    color: transparent;
+}
