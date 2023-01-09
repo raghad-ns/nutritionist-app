@@ -5,11 +5,12 @@ import PatientInfo from '../../components/add/patient-info/patient-info.componen
 const Add = () => {
     return (
         <div className='add'>
-            <div className="actionButtons">
+            <div className="addActionButtons">
                 <button className='innerButton'> cancel</button>
                 <button className='innerButton'> save</button>
             </div>
             <PatientInfo />
+
         </div>
     )
 }

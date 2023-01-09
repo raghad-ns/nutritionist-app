@@ -1,14 +1,16 @@
 .add {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.actionButtons {
-    display: inline-flex;
-    justify-content: flex-end;
-    margin-right: 60px;
-    margin-top: 30px;
+.addActionButtons {
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-right: 60px;
+  margin-top: 30px;
 }
-.add > .actionButtons > .innerButton {
-    margin-left: 20px;
+
+.add>.addActionButtons>.innerButton {
+  margin-left: 20px;
 }
