@@ -1,0 +1,14 @@
+
+.tabs {
+    --bar-color: #ccc;
+    --background: linear-gradient(to top, rgba(0, 0, 0, 0) 60%, #e0e0e0);
+    display: inline-flex;
+    width: 90%;
+    border: 1px solid rgb(27, 109, 87);
+    margin-top: 20px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+    overflow: hidden;
+}

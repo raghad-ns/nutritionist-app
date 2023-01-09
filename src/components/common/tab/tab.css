@@ -1,0 +1,25 @@
+
+.tab {
+    flex: 1;
+    display: flex;
+}
+
+.tab>.tab-input {
+    width: 0;
+    height: 0;
+    margin: 0;
+    display: none;
+}
+
+.tab>.tab-box {
+    padding: .5rem;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.tab>.tab-input:checked+.tab-box {
+    background: var(--background);
+    border-color: var(--bar-color);
+}
