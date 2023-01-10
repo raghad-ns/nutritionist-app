@@ -20,12 +20,15 @@
 
 .dailyMealsWrapper>.dailyMeals>.mealsWrapper {
     display: flex;
-    justify-content: space-between;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    row-gap: 10px;
     width: 100%;
     height: 70%;
 }
 
-.dailyMealsWrapper>.dailyMeals>.mealsWrapper>.stats {
+.dailyMealsWrapper>.dailyMeals>.mealsHeader>.stats {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -34,22 +37,16 @@
     font-size: 16px;
 }
 
-.dailyMealsWrapper>.dailyMeals>.mealsWrapper>.meals {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    row-gap: 10px;
-}
-
-.dailyMealsWrapper>.dailyMeals>.newMealButton {
+.dailyMealsWrapper>.dailyMeals>.mealsHeader {
     display: inline-flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     height: fit-content;
     width: 100%;
 }
 
-.dailyMealsWrapper>.dailyMeals>.newMealButton>button {
+.dailyMealsWrapper>.dailyMeals>.mealsHeader>button {
     height: 50px;
     width: 50px;
     display: flex;

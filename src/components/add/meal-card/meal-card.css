@@ -1,0 +1,18 @@
+.mealCard {
+    display: flex;
+    justify-content: flex-start;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.mealCard > .imageWrapper {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mealCard > .mealDetails  {
+    display: flex;
+    flex-direction: column;
+}
