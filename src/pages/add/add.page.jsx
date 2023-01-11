@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './add.css'
 import PatientInfo from '../../components/add/patient-info/patient-info.component'
 import Tabs from '../../components/add/tabs/tabs.component'
@@ -7,6 +7,11 @@ import AddMeal from '../../components/add/add-meal/add-meal.component'
 
 const Add = () => {
     const [addMeal , setAddmeal] = useState(false) ;
+    const [selectedDay , setSelectedDay] = useState(0) ;
+    useEffect (() => {
+        console.log(selectedDay);
+    } , [selectedDay])
+
     return (
         <div className='add'>
             {addMeal && <AddMeal setAddMeal = {setAddmeal}/>}
@@ -15,7 +20,7 @@ const Add = () => {
                 <button className='innerButton'> save</button>
             </div>
             <PatientInfo />
-            <Tabs/>
+            <Tabs selectedDay = {selectedDay} setSelectedDay = {setSelectedDay}/>
             <DailyMeals setAddMeal = {setAddmeal} />
         </div>
     )
