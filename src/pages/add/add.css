@@ -10,6 +10,7 @@
   justify-content: flex-end;
   margin-right: 60px;
   margin-top: 30px;
+  width: 94%;
 }
 
 .add>.addActionButtons>.innerButton {

@@ -35,6 +35,10 @@
     align-items: flex-start;
     width: 20%;
     font-size: 16px;
+    padding: 10px;
+    background-color: #dedede;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #ccc
 }
 
 .dailyMealsWrapper>.dailyMeals>.mealsHeader {

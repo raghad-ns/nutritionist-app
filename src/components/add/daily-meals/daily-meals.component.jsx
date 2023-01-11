@@ -25,7 +25,7 @@ const DailyMeals = (props) => {
                 <div className="mealsHeader">
                     <button className='innerButton' type='button' onClick={() => props.setAddMeal(true)}><Plus size={30} weight='bold' /></button>
                     <div className="stats">
-                        <span>total calories per this day :</span>
+                        <span>Total calories per this day :</span>
                         <span>{calories} cal</span>
                     </div>
                 </div>
