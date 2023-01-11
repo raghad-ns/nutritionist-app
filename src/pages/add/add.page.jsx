@@ -7,22 +7,32 @@ import AddMeal from '../../components/add/add-meal/add-meal.component'
 
 const Add = () => {
     const [addMeal , setAddmeal] = useState(false) ;
+    const food =  JSON.parse (localStorage.getItem('food') ||'[]');
+    const mealsPerDay = [
+        [food[0] , food[1]] ,
+        [food[1] , food[2]] ,
+        [food[2] , food[3]] ,
+        [food[0] , food[3]] ,
+        [food[0] , food[2]] ,
+        [food[1] , food[3]] ,
+        [food[2] , food[3]] ,
+    ];
     const [selectedDay , setSelectedDay] = useState(0) ;
     useEffect (() => {
         console.log(selectedDay);
     } , [selectedDay])
 
     return (
-        <div className='add'>
+        <form className='add'>
             {addMeal && <AddMeal setAddMeal = {setAddmeal}/>}
             <div className="addActionButtons">
-                <button className='innerButton'> cancel</button>
-                <button className='innerButton'> save</button>
+                <button className='innerButton' type='reset'> cancel</button>
+                <button className='innerButton' type='submit'> save</button>
             </div>
             <PatientInfo />
             <Tabs selectedDay = {selectedDay} setSelectedDay = {setSelectedDay}/>
-            <DailyMeals setAddMeal = {setAddmeal} />
-        </div>
+            <DailyMeals setAddMeal = {setAddmeal} meals = {mealsPerDay[selectedDay]}/>
+        </form>
     )
 }
 

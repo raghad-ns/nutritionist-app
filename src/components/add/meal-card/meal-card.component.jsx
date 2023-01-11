@@ -6,10 +6,13 @@ const MealCard = (props) => {
     return (
         <div className='mealCard'>
             <div className="imageWrapper">
-                {/* <img src={props.image} alt={props.name} /> */}
-                <Image />
+                {props.image
+                    ? <img src={props.image} alt={props.name} />
+                    : <Image />
+                }
             </div>
             <div className='mealDetails'>
+                <span>food : {props.name}</span>
                 <span>amount : {props.amount}</span>
                 <span>calories : {props.calories}</span>
             </div>

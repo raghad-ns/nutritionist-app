@@ -20,35 +20,9 @@ const DailyMeals = (props) => {
                     </div>
                 </div>
                 <div className="mealsWrapper">
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
-                    <MealCard name='rice' amount={100} calories={150} />
+                    {props.meals.map((meal, index) =>
+                        <MealCard {...meal} key={index} />
+                    )}
                 </div>
 
             </div>
