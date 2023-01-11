@@ -1,20 +1,20 @@
-.foodRow > td > img {
+.foodRow>td>img {
     width: 90px;
     border-radius: 8px;
 }
 
-.foodRow > td > .action > button {
+.foodRow>td>.action>button {
     background: none;
     border: none;
     border-radius: 15px;
 }
 
-.foodRow > td > .action {
+.foodRow>td>.action {
     display: flex;
     padding: 0px 10px;
     justify-content: space-evenly;
 }
 
-.foodRow > td > .action > button:hover {
+.foodRow>td>.action>button:hover {
     box-shadow: 1px 1px 3px 1px #eee;
 }

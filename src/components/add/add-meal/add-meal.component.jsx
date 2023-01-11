@@ -28,7 +28,7 @@ const AddMeal = (props) => {
                 </div>
             </div>
             <div className="actionButtons">
-                <button className="innerButton"  onClick={() => props.setAddMeal(false)}>add</button>
+                <button className="innerButton" onClick={() => props.setAddMeal(false)}>add</button>
                 <button className="innerButton" onClick={() => props.setAddMeal(false)}>cancel</button>
             </div>
         </PopUp>

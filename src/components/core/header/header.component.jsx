@@ -15,7 +15,6 @@ const Header = () => {
                 {(window.location.pathname === "/viewPrograms") && <span className='pageName'>&nbsp; - existing programs</span>}
                 {(window.location.pathname === "/foodTable") && <span className='pageName'>&nbsp; - food table</span>}
             </div>
-
             {
                 window.location.pathname !== '/' &&
                 <button onClick={() => navigate('/')} > <House size={45} color='white' weight='fill' className="homeButton" /> </button>

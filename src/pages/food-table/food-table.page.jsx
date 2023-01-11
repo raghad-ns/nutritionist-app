@@ -7,14 +7,14 @@ import { FoodContext } from '../../components/providers/food.provider'
 
 const FoodTable = () => {
 
-    const [action, setAction] = useState({type : 'none' , data : null});
+    const [action, setAction] = useState({ type: 'none', data: null });
     const foodContext = useContext(FoodContext);
 
     return (
         <div className='foodTable'>
-            {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action = {action} /></div>}
+            {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action={action} /></div>}
             <div className='innerButtonWrapper' >
-                <button className='innerButton' onClick={() => setAction({type : 'add' , data : null})}>Add <Plus size={18} weight='bold' /></button>
+                <button className='innerButton' onClick={() => setAction({ type: 'add', data: null })}>Add <Plus size={18} weight='bold' /></button>
             </div>
             <table cellSpacing={15} >
                 <thead>

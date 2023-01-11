@@ -1,7 +1,8 @@
-.notFound > img {
+.notFound>img {
     width: 87%;
     height: 84vh;
 }
+
 .notFound {
     display: flex;
     flex-direction: column;

@@ -11,7 +11,7 @@
     color: white;
 }
 
-.header > .title {
+.header>.title {
     display: flex;
     justify-content: flex-start;
     font-weight: 600;
@@ -20,18 +20,18 @@
     font-style: italic;
 }
 
-.header > .title > .pageName {
+.header>.title>.pageName {
     margin-top: 6px;
     font-size: 25px;
 }
 
-.header > button {
+.header>button {
     background: none;
-    border: none; 
+    border: none;
     justify-self: flex-end;
 }
 
-.header > .title > img {
+.header>.title>img {
     width: 50px;
     margin-right: 10px;
 }

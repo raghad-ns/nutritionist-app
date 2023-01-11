@@ -6,20 +6,22 @@
     margin-right: 20px;
     margin-bottom: 20px;
 }
-.mealCard > .imageWrapper {
+
+.mealCard>.imageWrapper {
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.mealCard > .imageWrapper > img {
+
+.mealCard>.imageWrapper>img {
     width: 100px;
     height: 120px;
     border-radius: 10px;
     box-shadow: 1px 1px 3px 1px #ccc;
 }
 
-.mealCard > .mealDetails  {
+.mealCard>.mealDetails {
     padding: 10px;
     display: flex;
     flex-direction: column;

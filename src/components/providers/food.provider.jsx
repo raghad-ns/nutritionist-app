@@ -1,4 +1,4 @@
-import React, { useEffect , useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import { reducer } from '../reducers/food.reducer';
 export const FoodContext = React.createContext(null);
 
@@ -9,7 +9,7 @@ export const FoodContext = React.createContext(null);
 */
 
 const FoodProvider = (props) => {
-    const [food , dispatch] = useReducer(reducer , JSON.parse(localStorage.getItem('food') || '[]')) ;
+    const [food, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('food') || '[]'));
     useEffect(() => {
         localStorage.setItem('food', JSON.stringify(food || []))
     }, [food])

@@ -24,7 +24,6 @@ const DailyMeals = (props) => {
                         <MealCard {...meal} key={index} />
                     )}
                 </div>
-
             </div>
         </div>
     )

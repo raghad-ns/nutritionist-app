@@ -1,12 +1,11 @@
-
-.popUp > .actionButtons {
+.popUp>.actionButtons {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     padding: 5px;
 }
 
-.popUP > h2 {
+.popUP>h2 {
     color: #444;
     text-transform: uppercase;
 }

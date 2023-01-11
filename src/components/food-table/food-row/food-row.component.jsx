@@ -16,8 +16,8 @@ const FoodRow = (props) => {
             <td>{props.data.calories}</td>
             <td>
                 <div className="action">
-                    <button onClick={() => props.setAction ({type : 'edit' , data : props.data})}>
-                        <PencilSimple size={25} color = '#eddd0e'/>
+                    <button onClick={() => props.setAction({ type: 'edit', data: props.data })}>
+                        <PencilSimple size={25} color='#eddd0e' />
                     </button>
                     <button onClick={deleteFood} >
                         <TrashSimple size={25} color='red' />

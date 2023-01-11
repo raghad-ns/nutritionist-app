@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.addActionButtons {
+.add>.addActionButtons {
   display: inline-flex;
   justify-content: flex-end;
   margin-right: 60px;
