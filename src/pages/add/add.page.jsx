@@ -23,7 +23,7 @@ const Add = () => {
     } , [selectedDay])
 
     return (
-        <form className='add'>
+        <div className='add'>
             {addMeal && <AddMeal setAddMeal = {setAddmeal}/>}
             <div className="addActionButtons">
                 <button className='innerButton' type='reset'> cancel</button>
@@ -32,7 +32,7 @@ const Add = () => {
             <PatientInfo />
             <Tabs selectedDay = {selectedDay} setSelectedDay = {setSelectedDay}/>
             <DailyMeals setAddMeal = {setAddmeal} meals = {mealsPerDay[selectedDay]}/>
-        </form>
+        </div>
     )
 }
 
