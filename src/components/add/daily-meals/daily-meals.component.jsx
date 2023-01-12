@@ -27,6 +27,8 @@ const DailyMeals = (props) => {
                     <div className="stats">
                         <span>Total calories per this day :</span>
                         <span>{calories} cal</span>
+                        <span>Number of meals :</span>
+                        <span>{props.meals.length} {props.meals.length !== 1 ? 'meals' : 'meal'}</span>
                     </div>
                 </div>
                 <div className="mealsWrapper">
