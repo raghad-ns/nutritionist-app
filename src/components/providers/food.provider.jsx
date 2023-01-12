@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { reducer } from '../reducers/food.reducer';
+import { reducer } from '../../reducers/food.reducer';
 export const FoodContext = React.createContext(null);
 
 /**
