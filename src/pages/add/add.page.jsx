@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './add.css'
 import PatientInfo from '../../components/add/patient-info/patient-info.component'
 import Tabs from '../../components/add/tabs/tabs.component'
 import DailyMeals from '../../components/add/daily-meals/daily-meals.component'
 import AddMeal from '../../components/add/add-meal/add-meal.component'
+import { DietProgramsContext } from '../../components/providers/diet-programs.provider'
 
 const Add = () => {
+    const [selectedDay, setSelectedDay] = useState(0);
     const [addMeal, setAddmeal] = useState(false);
-    const [programs, setPrograms] = useState(JSON.parse(localStorage.getItem('dietPrograms') || '[]'));
+    const dietProgramsContext = useContext (DietProgramsContext);
+    const programs = dietProgramsContext.dietPrograms ; 
+    const setPrograms = dietProgramsContext.setDietPrograms;
     const [mealsPerDay, setMealsPerDay] = useState([
         [],
         [],
@@ -17,12 +21,6 @@ const Add = () => {
         [],
         [],
     ]);
-
-    const [selectedDay, setSelectedDay] = useState(0);
-    useEffect(() => {
-        console.log('programs', programs);
-        localStorage.setItem('dietPrograms', JSON.stringify(programs));
-    }, [programs])
 
     /**
      * @param {React.ChangeEvent<HTMLInputElement>} e 
