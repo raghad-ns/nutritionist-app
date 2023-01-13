@@ -1,13 +1,12 @@
 
 import { DietProgramsContext } from '../components/providers/diet-programs.provider.jsx'
-import { useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const useAddDietProgram = () => {
     const navigate = useNavigate();
     const dietProgramsContext = useContext(DietProgramsContext);
-    const programs = dietProgramsContext.dietPrograms;
-    const setPrograms = dietProgramsContext.setDietPrograms;
+    const setPrograms = dietProgramsContext.dispatch;
     const [mealsPerDay, setMealsPerDay] = useState([
         [],
         [],
@@ -36,7 +35,7 @@ const useAddDietProgram = () => {
             city: city
         };
         console.log(patientInfo);
-        setPrograms([...programs, { id: Date.now(), patientInfo: patientInfo, mealsPerDay: mealsPerDay }])
+        setPrograms({ type: 'ADD', newProgram: { id: Date.now(), patientInfo: patientInfo, mealsPerDay: mealsPerDay } })
         reset(e);
         navigate('/viewPrograms')
     }
