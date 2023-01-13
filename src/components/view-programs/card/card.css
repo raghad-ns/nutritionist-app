@@ -1,0 +1,33 @@
+.programCard {
+    display: inline-flex;
+    justify-content: space-between;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(84, 209, 176, 0.371);
+    border-radius: 20px;
+}
+
+.programCard:hover {
+    box-shadow: 2px 2px 5px 2px rgba(84, 209, 176, 0.371);;
+}
+
+.programCard>.details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.programCard>.actionButtons {
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    
+.programCard>.actionButtons > button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
