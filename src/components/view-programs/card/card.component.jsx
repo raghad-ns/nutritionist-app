@@ -1,5 +1,6 @@
 import { FilePdf, TrashSimple } from 'phosphor-react'
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { DietProgramsContext } from '../../providers/diet-programs.provider'
 import './card.css'
 
@@ -18,7 +19,8 @@ const ProgramCard = (props) => {
       <div className='details'>
         <span>Name : {props.program.patientInfo.name} </span>
         <span>Weekly calories : {calories} </span>
-        <span>View details </span>
+        {/* <span>View details </span> */}
+        <Link to = {`/dietProgram/${props.program.id}`}>View details</Link>
       </div>
       <div className='actionButtons'>
         <button
