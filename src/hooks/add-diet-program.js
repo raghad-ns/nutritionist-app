@@ -34,7 +34,6 @@ const useAddDietProgram = () => {
             dob: dob,
             city: city
         };
-        console.log(patientInfo);
         setPrograms({ type: 'ADD', newProgram: { id: Date.now(), patientInfo: patientInfo, mealsPerDay: mealsPerDay } })
         reset(e);
         navigate('/viewPrograms')

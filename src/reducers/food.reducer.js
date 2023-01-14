@@ -24,7 +24,6 @@
 const reducer = (food, action) => {
     switch (action.type) {
         case "ADD":
-            console.log([...food, action.food]);
             return [...food, action.food];
         case "EDIT":
             return food.map(foodItem => foodItem.id === action.food.id ? action.food : foodItem)
