@@ -4,6 +4,27 @@ import { Link } from 'react-router-dom'
 import { DietProgramsContext } from '../../providers/diet-programs.provider'
 import './card.css'
 
+/**
+ * 
+ * @param {{
+ * program : {
+ * id : number ;
+ * patientInfo : {
+ * name : string ;
+ * phone : number ;
+ * email : string ;
+ * dof : Date
+ * city : string;};
+ * mealsPerDay : Array <{
+ * id : number;
+ * name : String;
+ * image : String;
+ * amount : number;
+ * calories : number;}> ;
+ * }
+ * }} props 
+ * @returns 
+ */
 const ProgramCard = (props) => {
   const dietProgramsContext = useContext(DietProgramsContext)
   const deleteProgram = () => {

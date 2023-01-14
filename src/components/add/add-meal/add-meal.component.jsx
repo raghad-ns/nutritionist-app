@@ -8,7 +8,17 @@ import { FoodContext } from '../../providers/food.provider';
 
 /**
  * 
- * @param {setAddMeal : React.Dispatch<React.SetStateAction<boolean>>} props 
+ * @param {{
+ * mealsPerDay : Array <{
+ * id : number;
+ * name : String;
+ * image : String;
+ * amount : number;
+ * calories : number;}> ;
+ * setAddMeal : void;
+ * setMealsPerDay : void;
+ * selectedDay : number;
+ * }} props 
  * @returns 
  */
 const AddMeal = (props) => {

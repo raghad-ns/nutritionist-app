@@ -4,15 +4,15 @@ import './daily-meals.css'
 
 /**
  * 
- * @param {
+ * @param {{
  * meals : Array <{
  * id : number;
  * name : String;
  * image : String;
  * amount : number;
  * calories : number;}> ;
- * setMeals : void;
- * } props 
+ * setAddMeal : void;
+ * }} props 
  */
 const DailyMeals = (props) => {
     let calories = 0;

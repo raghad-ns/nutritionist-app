@@ -16,7 +16,7 @@ function App() {
       <FoodProvider>
         <DietProgramsProvider>
           <BrowserRouter>
-            <Header homeIcon={true} />
+            <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/foodTable" element={<FoodTable />} />

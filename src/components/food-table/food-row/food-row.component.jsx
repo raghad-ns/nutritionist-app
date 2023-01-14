@@ -3,6 +3,19 @@ import './food-row.css'
 import { PencilSimple, TrashSimple } from 'phosphor-react'
 import { FoodContext } from '../../providers/food.provider'
 
+/**
+ * 
+ * @param {{
+ * data : {
+ * id : number ;
+ * name : string ;
+ * image : string ; 
+ * amount : number ;
+ * calories : number}
+ * setAction : void
+ * }} props 
+ * @returns 
+ */
 const FoodRow = (props) => {
     const foodContext = useContext(FoodContext);
     const deleteFood = () => {

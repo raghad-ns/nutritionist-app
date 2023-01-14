@@ -4,6 +4,21 @@ import PopUp from '../../core/pop-up/pop-up.component';
 import { FoodContext } from '../../providers/food.provider';
 import './add-food.css'
 
+/**
+ * 
+ * @param {{
+ * setAction : void ;
+ * action : {
+ * type : string; 
+ * data : {
+ * id : number ;
+ * name : string ;
+ * image : string ; 
+ * amount : number ;
+ * calories : number}}
+ * }} props 
+ * @returns 
+ */
 const AddFood = (props) => {
   const [name, setName] = useState(props.action.data ? props.action.data.name : '');
   const [image, setImage] = useState(props.action.data ? props.action.data.image : '');
