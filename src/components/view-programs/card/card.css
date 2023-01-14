@@ -9,7 +9,8 @@
 }
 
 .programCard:hover {
-    box-shadow: 2px 2px 5px 2px rgba(84, 209, 176, 0.371);;
+    box-shadow: 2px 2px 5px 2px rgba(84, 209, 176, 0.371);
+    ;
 }
 
 .programCard>.details {
@@ -17,6 +18,18 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
+    font-weight: bold;
+}
+
+.programCard>.details>a {
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.programCard>.details>a:hover {
+    font-weight: bold;
+    color: #666;
 }
 
 .programCard>.actionButtons {
@@ -26,8 +39,13 @@
     flex-direction: column;
     justify-content: space-between;
 }
-    
-.programCard>.actionButtons > button {
+
+.programCard>.actionButtons>button {
     border: none;
     background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+.programCard>.actionButtons>button:hover {
+    box-shadow: 1px 1px 3px 1px rgba(84, 209, 176, 0.371);
 }
