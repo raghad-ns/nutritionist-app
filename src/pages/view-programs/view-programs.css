@@ -6,16 +6,6 @@
 
 }
 
-.viewProgramsWrapper>.inputWrapper {
-    width: 100%;
-    margin-left: 35px;
-    margin-top: 35px;
-}
-
-.viewProgramsWrapper>.inputWrapper>input {
-    width: 100%;
-}
-
 .viewPrograms {
     margin: 20px;
     display: flex;

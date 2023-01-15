@@ -1,0 +1,12 @@
+.searchBar {
+    width: 100%;
+    margin: 20px;
+    margin-bottom: 0px;
+    display: flex;
+}
+.searchBar>.inputWrapper {
+    width: 90%;
+}
+.searchBar>.inputWrapper>input {
+    width: 100%;
+}
