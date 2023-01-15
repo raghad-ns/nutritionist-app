@@ -1,0 +1,43 @@
+.specificProgram {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.specificProgram>h1 {
+    width: 90%;
+    text-align: left;
+}
+
+.specificProgram>.mealsForThisDay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(27, 109, 87);
+    border-radius: 20px;
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.specificProgram>.mealsForThisDay>.day {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: capitalize;
+    border-bottom: 1px solid #aaa;
+}
+
+.specificProgram>.mealsForThisDay>.meals {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.specificProgram>.mealsForThisDay>.meals>.mealcard {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
