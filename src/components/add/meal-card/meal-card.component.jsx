@@ -2,6 +2,16 @@ import { Image } from 'phosphor-react'
 import React from 'react'
 import './meal-card.css'
 
+/**
+ * 
+ * @param {{
+ * name : string; 
+ * image : string ;
+ * calories : number ;
+ * amount : number ;
+ * }} props 
+ * @returns 
+ */
 const MealCard = (props) => {
     return (
         <div className='mealCard'>

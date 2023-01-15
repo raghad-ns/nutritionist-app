@@ -28,7 +28,7 @@ const FoodTable = () => {
                 </thead>
                 <tbody>
                     {foodContext.food.map((foodItem, index) =>
-                        <FoodRow key={index} data={foodItem} action={action} setAction={setAction} />)}
+                        <FoodRow key={index} data={foodItem} setAction={setAction} />)}
                 </tbody>
             </table>
         </div>
