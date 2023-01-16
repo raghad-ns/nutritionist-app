@@ -54,11 +54,11 @@ const ProgramCard = (props) => {
           <TrashSimple size={24} color='red' />
         </button>
         <PDFDownloadLink
-          document={<PdfDocument
-            program={props.program} />}
+        className='pdfButton'
+          document={<PdfDocument program={props.program} />}
           fileName={props.program.patientInfo.name + '.pdf'}
         >
-          <FilePdf size={26} />
+          <FilePdf size={26} color='#444' />
         </PDFDownloadLink>
       </div>
     </div>

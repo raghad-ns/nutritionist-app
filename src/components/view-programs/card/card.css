@@ -43,9 +43,10 @@
 .programCard>.actionButtons>button {
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 10px;
 }
 
-.programCard>.actionButtons>button:hover {
+.programCard>.actionButtons>button:hover,
+.programCard>.actionButtons>.pdfButton:hover {
     box-shadow: 1px 1px 3px 1px rgba(84, 209, 176, 0.371);
+    border-radius: 10px;
 }
