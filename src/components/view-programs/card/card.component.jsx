@@ -1,6 +1,8 @@
 // import jsPDF from 'jspdf'
+import { PDFDownloadLink } from '@react-pdf/renderer'
 import { FilePdf, TrashSimple } from 'phosphor-react'
 import { Link } from 'react-router-dom'
+import { PdfDocument } from '../../test-pdf/pdfTester'
 // import ReactPDF from '@react-pdf/renderer';
 import './card.css'
 // import image from '../../../assets/not-found.jpg'
@@ -36,28 +38,6 @@ const ProgramCard = (props) => {
     meals.forEach(meal => calories += Number(meal.calories))
   })
 
-  const generatePDF = () => {
-    // let doc = new jsPDF('portrait' , 'px' , 'a4' , 'false');
-    // doc.addImage(image , 'JPG' , 65 , 20 , 500 , 400) ; 
-    // doc.save('test');
-
-    // ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
-
-    // // using Java Script method to get PDF file
-    // fetch('Sample.pdf').then(response => {
-    //   response.blob().then(blob => {
-    //     // Creating new object of PDF file
-    //     const fileURL = window.URL.createObjectURL(blob);
-    //     // Setting various property values
-    //     let alink = document.createElement('a');
-    //     alink.href = fileURL;
-    //     alink.download = 'Sample.pdf';
-    //     alink.click();
-    //   })
-    // })
-
-  }
-
   return (
     <div className='programCard'>
       <div className='details'>
@@ -72,7 +52,13 @@ const ProgramCard = (props) => {
         >
           <TrashSimple size={24} color='red' />
         </button>
-        <button onClick={generatePDF}><FilePdf size={26} /></button>
+        <PDFDownloadLink
+          document={<PdfDocument
+            program={props.program} />}
+          fileName={props.program.patientInfo.name + '.pdf'}
+        >
+          <FilePdf size={26} />
+        </PDFDownloadLink>
       </div>
     </div>
   )
