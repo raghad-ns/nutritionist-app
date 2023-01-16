@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './food-row.css'
 import { PencilSimple, TrashSimple } from 'phosphor-react'
-import { FoodContext } from '../../providers/food.provider'
 
 /**
  * 
@@ -17,9 +16,9 @@ import { FoodContext } from '../../providers/food.provider'
  * @returns 
  */
 const FoodRow = (props) => {
-    const foodContext = useContext(FoodContext);
     const deleteFood = () => {
-        foodContext.dispatch({ type: 'DELETE', id: props.data.id })
+        props.setDeleteConfirmation(true)
+        props.setItemMayBeDeleted(props.data.id)
     }
     return (
         <tr className='foodRow'>

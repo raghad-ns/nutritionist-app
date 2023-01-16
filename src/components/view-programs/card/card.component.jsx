@@ -1,8 +1,6 @@
 // import jsPDF from 'jspdf'
 import { FilePdf, TrashSimple } from 'phosphor-react'
-import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { DietProgramsContext } from '../../providers/diet-programs.provider'
 // import ReactPDF from '@react-pdf/renderer';
 import './card.css'
 // import image from '../../../assets/not-found.jpg'
@@ -29,9 +27,9 @@ import './card.css'
  * @returns 
  */
 const ProgramCard = (props) => {
-  const dietProgramsContext = useContext(DietProgramsContext)
   const deleteProgram = () => {
-    dietProgramsContext.dispatch({ type: 'DELETE', id: props.program.id })
+    props.setItemMayBeDeleted(props.program.id)
+    props.setDeleteConfirmation(true)
   }
   let calories = 0;
   props.program.mealsPerDay.forEach(meals => {

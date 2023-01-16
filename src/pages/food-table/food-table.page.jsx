@@ -3,16 +3,20 @@ import { Plus } from 'phosphor-react'
 import './food-table.css'
 import FoodRow from '../../components/food-table/food-row/food-row.component'
 import AddFood from '../../components/food-table/add-food/add-food.component'
+import DeleteConfirmation from '../../components/core/delete-confirmation/delete-confirmation.component'
 import { FoodContext } from '../../components/providers/food.provider'
 
 const FoodTable = () => {
 
     const [action, setAction] = useState({ type: 'none', data: null });
     const foodContext = useContext(FoodContext);
+    const [deleteConfirmation , setDeleteConfirmation] = useState (false);
+    const [itemMayBeDeleted , setItemMayBeDeleted] = useState (null);
 
     return (
         <div className='foodTable'>
             {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action={action} /></div>}
+            {deleteConfirmation && <DeleteConfirmation source = 'food' id={itemMayBeDeleted} setDeleteConfirmation={setDeleteConfirmation} />}
             <div className='innerButtonWrapper' >
                 <button className='innerButton' onClick={() => setAction({ type: 'add', data: null })}>Add <Plus size={18} weight='bold' /></button>
             </div>
@@ -28,7 +32,7 @@ const FoodTable = () => {
                 </thead>
                 <tbody>
                     {foodContext.food.map((foodItem, index) =>
-                        <FoodRow key={index} data={foodItem} setAction={setAction} />)}
+                        <FoodRow key={index} data={foodItem} setAction={setAction} setDeleteConfirmation={setDeleteConfirmation} setItemMayBeDeleted = {setItemMayBeDeleted}/>)}
                 </tbody>
             </table>
         </div>
