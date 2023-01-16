@@ -40,10 +40,11 @@ const AddMeal = (props) => {
     return (
         <PopUp>
             <h2>Add meal</h2>
-            <Select label='meal' name='meal'
+            <Select label='meal' name='meal' defaultValue={'none'}
                 onChange={(e) =>
                     setMeal(foodContext.food.find(meal => meal.name === e.target.value))
                 }>
+                    <option value="none" disabled hidden>Select a meal</option>
                 {foodContext.food.map((meal, index) =>
                     <option value={meal.name} key={index}>{meal.name}</option>)}
             </Select>
