@@ -2,7 +2,7 @@
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { FilePdf, TrashSimple } from 'phosphor-react'
 import { Link } from 'react-router-dom'
-import { PdfDocument } from '../../test-pdf/pdfTester'
+import { PdfDocument } from '../../pdf/pdf.component'
 // import ReactPDF from '@react-pdf/renderer';
 import './card.css'
 // import image from '../../../assets/not-found.jpg'
@@ -24,7 +24,9 @@ import './card.css'
  * image : String;
  * amount : number;
  * calories : number;}> ;
- * }
+ * } ;
+ * setItemMayBeDeleted : void ;
+ * setDeleteConfirmation : void ;
  * }} props 
  * @returns 
  */
@@ -43,7 +45,6 @@ const ProgramCard = (props) => {
       <div className='details'>
         <span>Name : {props.program.patientInfo.name} </span>
         <span>Weekly calories : {calories} </span>
-        {/* <span>View details </span> */}
         <Link to={`/dietProgram/${props.program.id}`}>View details</Link>
       </div>
       <div className='actionButtons'>

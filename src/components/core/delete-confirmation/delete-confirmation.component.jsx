@@ -4,6 +4,15 @@ import { FoodContext } from '../../providers/food.provider'
 import PopUp from '../pop-up/pop-up.component'
 import './delete-confirmation.css'
 
+/**
+ * 
+ * @param {{
+ * id : number ;
+ * source : string ;
+ * setDeleteConfirmation : void ;
+ * }} props 
+ * @returns 
+ */
 const DeleteConfirmation = (props) => {
     const foodContext = useContext(FoodContext);
     const dietProgramsContext = useContext(DietProgramsContext)

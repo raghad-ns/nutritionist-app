@@ -11,7 +11,9 @@ import { PencilSimple, TrashSimple } from 'phosphor-react'
  * image : string ; 
  * amount : number ;
  * calories : number}
- * setAction : void
+ * setAction : void ;
+ * setItemMayBeDeleted : void ;
+ * setDeleteConfirmation : void ;
  * }} props 
  * @returns 
  */
