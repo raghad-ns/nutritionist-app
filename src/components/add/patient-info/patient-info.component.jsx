@@ -13,7 +13,8 @@ const PatientInfo = () => {
                     <Input label='phone' type='number' name='phone' required />
                     <Input label='email' type='email' name='email' required />
                     <Input label='DOB' type='date' name='dob' required />
-                    <Select label='city' name='city' required>
+                    <Select label='city' name='city' required defaultValue={'none'}>
+                        <option value="none" disabled hidden>Select city</option>
                         {CITIES.map((city, index) => <option value={city} key={index}>{city}</option>)}
                     </Select>
                 </div>
