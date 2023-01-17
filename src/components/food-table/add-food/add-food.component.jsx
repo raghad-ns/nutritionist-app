@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import ImagePicker from '../../common/image-picker/image-picker.component';
 import Input from '../../common/input/input.component'
 import PopUp from '../../core/pop-up/pop-up.component';
 import { FoodContext } from '../../providers/food.provider';
@@ -21,7 +22,7 @@ import './add-food.css'
  */
 const AddFood = (props) => {
   const [name, setName] = useState(props.action.data ? props.action.data.name : '');
-  const [image, setImage] = useState(props.action.data ? props.action.data.image : '');
+  const [image, setImage] = useState(props.action.data ? props.action.data.image : null);
   const [amount, setAmount] = useState(props.action.data ? props.action.data.amount : 0);
   const [calories, setCalories] = useState(props.action.data ? props.action.data.calories : 0);
   const foodContext = useContext(FoodContext);
@@ -51,13 +52,29 @@ const AddFood = (props) => {
     props.setAction({ type: 'none', data: null })
   }
 
+  function imageUploaded(e) {
+    let base64String = "";
+    var file = e.target.files[0];
+    console.log(file);
+    var reader = new FileReader();
+    reader.onload = function () {
+      base64String = reader.result.replace("data:", "")
+        .replace(/^.+,/, "");
+      base64String = 'data:image/jpeg;base64,' + base64String
+      setImage(base64String);
+      console.log(base64String);
+    }
+    reader.readAsDataURL(file);
+  }
+
   return (
-    <PopUp className='addFood'>
+    <PopUp>
       <h2>{props.action.type === 'add' ? 'Add new food type' : 'edit'}</h2>
       <Input label='Food name' type='text' value={name} onChange={e => setName(e.target.value)} />
-      <Input label='image' type='text' value={image} onChange={e => setImage(e.target.value)} />
+      {/* <Input label='image' type='text' value={image} onChange={e => setImage(e.target.value)} /> */}
       <Input label='amount (gm)' type='number' value={amount} onChange={e => setAmount(e.target.value)} />
       <Input label='calories (cal)' type='number' value={calories} onChange={e => setCalories(e.target.value)} />
+      <ImagePicker label='image' onChange={imageUploaded} />
       <div className="actionButtons">
         {
           props.action.data
