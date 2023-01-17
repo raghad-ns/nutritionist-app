@@ -4,6 +4,8 @@ const reducer = (dietPrograms, action) => {
             return [...dietPrograms , action.newProgram]
         case 'DELETE':
             return dietPrograms.filter(program => program.id !== action.id)
+        case 'SET' :
+            return action.dietPrograms
         default:
             break;
     }

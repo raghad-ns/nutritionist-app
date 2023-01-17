@@ -15,9 +15,9 @@ import ViewPrograms from './pages/view-programs/view-programs.page';
 function App() {
   return (
     <div className="App">
-      <FoodProvider>
+      <UserProvider>
         <DietProgramsProvider>
-          <UserProvider>
+          <FoodProvider>
             <BrowserRouter>
               <Header />
               <Routes>
@@ -30,9 +30,9 @@ function App() {
                 <Route path="/*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
-          </UserProvider>
+          </FoodProvider>
         </DietProgramsProvider>
-      </FoodProvider>
+      </UserProvider>
     </div>
   );
 }
