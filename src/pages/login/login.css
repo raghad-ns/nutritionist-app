@@ -24,7 +24,7 @@ body {
     text-align: center;
     border-radius: 50px;
     background: #e0e0e0;
-    box-shadow: -11px 11px 11px rgba(84, 209, 176, 0.371), 11px -11px 11px rgba(84, 209, 176, 0.371);
+    box-shadow: -11px 11px 22px #bebebe, 11px -11px 22px #ffffff;
 }
 
 .form>p {
