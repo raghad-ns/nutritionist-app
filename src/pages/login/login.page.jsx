@@ -9,9 +9,9 @@ const Login = (e) => {
     const login = (e) => {
         e.preventDefault() ;
         const user = {email: e.target.email.value , password: e.target.password.value};
-        const validLogin = USERS.some(someUser => (someUser.email === user.email && someUser.password === user.password))
-        if (validLogin) {
-            userContext.setUser(user)
+        const currentUser = USERS.find(someUser => (someUser.email === user.email && someUser.password === user.password))
+        if (currentUser) {
+            userContext.setUser(currentUser)
             console.log(user);
             navigate('/');
         } 
