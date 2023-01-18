@@ -1,4 +1,4 @@
-import { List , UserCircle } from 'phosphor-react';
+import { List } from 'phosphor-react';
 import { Dropdown, Space } from 'antd';
 import { useContext } from 'react';
 import { UserContext } from '../../providers/user.provider';
