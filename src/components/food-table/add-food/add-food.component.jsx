@@ -1,3 +1,4 @@
+import { Image } from 'phosphor-react';
 import React, { useContext, useState } from 'react'
 import ImagePicker from '../../common/image-picker/image-picker.component';
 import Input from '../../common/input/input.component'
@@ -75,6 +76,13 @@ const AddFood = (props) => {
       <Input label='amount (gm)' type='number' value={amount} onChange={e => setAmount(e.target.value)} />
       <Input label='calories (cal)' type='number' value={calories} onChange={e => setCalories(e.target.value)} />
       <ImagePicker label='image' onChange={imageUploaded} />
+      <div className="imagePreview">
+        {
+          image
+            ? <img src={image} />
+            : <Image size={100} color = '#444'/>
+        }
+      </div>
       <div className="actionButtons">
         {
           props.action.data

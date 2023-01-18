@@ -9,3 +9,10 @@
     color: #444;
     text-transform: uppercase;
 }
+
+.popUp>.imagePreview>img {
+    box-sizing: border-box;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
