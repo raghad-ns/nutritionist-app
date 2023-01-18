@@ -51,6 +51,7 @@
     background: rgba(84, 209, 176, 0.371);
     border-radius: 10px;
     padding: 0px 10px;
+    margin-right: 5px;
 }
 
 .header>.navigationBar>button {

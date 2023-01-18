@@ -30,7 +30,7 @@ const Header = () => {
                     window.location.pathname !== '/' &&
                     <button onClick={() => navigate('/')} > <House size={40} color='white' weight='fill' className="homeButton" /> </button>
                 }
-                {userContext.user?.email && <MyDropdown />}
+                {window.location.pathname !== '/login' && <MyDropdown />}
             </div>
         </div>
     )

@@ -35,8 +35,12 @@ const MyDropDown = () => {
         },
         {
             key: '4',
-            danger: true,
-            label: <button onClick={logout} style={{ background: 'none', border: 'none' }}>Logout</button>,
+            danger: userContext.user?.email,
+            label: (
+                userContext.user?.email 
+                ? <button onClick={logout} style={{ background: 'none', border: 'none' }}>Logout</button>
+                : <Link to={'/login'}> Login</Link>
+            ),
         },
     ];
 
