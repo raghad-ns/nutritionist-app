@@ -1,4 +1,4 @@
-import React, { useContext, useMemo , useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import './view-programs.css'
 import ProgramCard from '../../components/view-programs/card/card.component'
 import { DietProgramsContext } from '../../components/providers/diet-programs.provider'
@@ -7,8 +7,8 @@ import SearchBar from '../../components/view-programs/search-bar/search-bar.comp
 import DeleteConfirmation from '../../components/core/delete-confirmation/delete-confirmation.component'
 
 const ViewPrograms = () => {
-    const [deleteConfirmation , setDeleteConfirmation] = useState (false);
-    const [itemMayBeDeleted , setItemMayBeDeleted] = useState (null);
+    const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+    const [itemMayBeDeleted, setItemMayBeDeleted] = useState(null);
     const [param] = useSearchParams();
     const dietProgramsContext = useContext(DietProgramsContext);
     const filteredPrograms = useMemo(() => {
@@ -18,13 +18,13 @@ const ViewPrograms = () => {
 
     return (
         <div className="viewProgramsWrapper">
-            {deleteConfirmation && <DeleteConfirmation id = {itemMayBeDeleted} setDeleteConfirmation = {setDeleteConfirmation} source = {'dietPrograms'}/>}
+            {deleteConfirmation && <DeleteConfirmation id={itemMayBeDeleted} setDeleteConfirmation={setDeleteConfirmation} source={'dietPrograms'} />}
             <SearchBar />
             <div className='viewPrograms'>
                 {filteredPrograms.map((program, index) =>
                     <ProgramCard program={program} key={index}
-                    setDeleteConfirmation = {setDeleteConfirmation}
-                    setItemMayBeDeleted = {setItemMayBeDeleted}
+                        setDeleteConfirmation={setDeleteConfirmation}
+                        setItemMayBeDeleted={setItemMayBeDeleted}
                     />)}
             </div>
         </div>
