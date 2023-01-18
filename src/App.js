@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Guard from './components/core/guard/gurd.component.jsx';
 import Header from './components/core/header/header.component';
 import DietProgramsProvider from './components/providers/diet-programs.provider';
 import FoodProvider from './components/providers/food.provider';
@@ -24,9 +25,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/foodTable" element={<FoodTable />} />
-                <Route path="/viewPrograms" element={<ViewPrograms />} />
-                <Route path="/add" element={<Add />} />
-                <Route path="/dietProgram/:id" element={<SpecificProgram />} />
+                <Route path="/viewPrograms" element={<Guard><ViewPrograms /></Guard>} />
+                <Route path="/add" element={<Guard><Add /></Guard>} />
+                <Route path="/dietProgram/:id" element={<Guard><SpecificProgram /></Guard>} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
