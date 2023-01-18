@@ -35,3 +35,25 @@
     width: 50px;
     margin-right: 10px;
 }
+
+.header > .navigationBar {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header > .navigationBar > .userDetails {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    background: rgba(84, 209, 176, 0.371);
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+
+.header>.navigationBar>button {
+    border: none;
+    background: none;
+}
