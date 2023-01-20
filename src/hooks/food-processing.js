@@ -1,4 +1,4 @@
-import { useState , useContext } from "react";
+import { useState, useContext } from "react";
 import { FoodContext } from "../components/providers/food.provider";
 
 const useFoodProcessing = (props) => {
@@ -8,12 +8,23 @@ const useFoodProcessing = (props) => {
     const [calories, setCalories] = useState(props.action.data ? props.action.data.calories : 0);
     const foodContext = useContext(FoodContext);
 
+    /**
+    * @param {React.ChangeEvent<HTMLInputElement>} e 
+    */
     const setNameOverride = (e) => {
         setName(e.target.value);
     }
+
+    /**
+    * @param {React.ChangeEvent<HTMLInputElement>} e 
+    */
     const setAmountOverride = (e) => {
         setAmount(e.target.value);
     }
+    
+    /**
+    * @param {React.ChangeEvent<HTMLInputElement>} e 
+    */
     const setCaloriesOverride = (e) => {
         setCalories(e.target.value);
     }
@@ -42,7 +53,10 @@ const useFoodProcessing = (props) => {
         foodContext.dispatch({ type: 'EDIT', food: tempFood })
         props.setAction({ type: 'none', data: null })
     }
-
+    
+    /**
+    * @param {React.ChangeEvent<HTMLInputElement>} e 
+    */
     function imageUploaded(e) {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -53,26 +67,26 @@ const useFoodProcessing = (props) => {
     }
 
     return ({
-        data : {
-            name : {
-                value : name , 
-                onChange : setNameOverride
-            } ,
-            amount : {
-                value : amount , 
-                onChange : setAmountOverride
-            } , 
-            calories : {
-                value : calories , 
-                onChange : setCaloriesOverride
-            } ,
-            image : {
-                value : image , 
-                onChange : imageUploaded
+        data: {
+            name: {
+                value: name,
+                onChange: setNameOverride
+            },
+            amount: {
+                value: amount,
+                onChange: setAmountOverride
+            },
+            calories: {
+                value: calories,
+                onChange: setCaloriesOverride
+            },
+            image: {
+                value: image,
+                onChange: imageUploaded
             }
-        } ,
-        addFood : addFood , 
-        editFood : editFood
+        },
+        addFood: addFood,
+        editFood: editFood
     })
 }
-export {useFoodProcessing}
+export { useFoodProcessing }

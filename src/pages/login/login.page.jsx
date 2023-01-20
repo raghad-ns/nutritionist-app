@@ -4,8 +4,13 @@ import { UserContext } from '../../components/providers/user.provider';
 import { USERS } from '../../data/users';
 import './login.css'
 const Login = () => {
+    
     const navigate = useNavigate();
     const userContext = useContext (UserContext);
+    
+    /**
+    * @param {React.ChangeEvent<HTMLInputElement>} e 
+    */
     const login = (e) => {
         e.preventDefault() ;
         const user = {email: e.target.email.value , password: e.target.password.value};

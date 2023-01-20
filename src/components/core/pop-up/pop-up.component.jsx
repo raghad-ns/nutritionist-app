@@ -9,7 +9,6 @@ import './pop-up.css'
 const PopUp = (props) => {
   return (
     <div className="popUpWrapper blur">
-      {/* <div className="blur"></  div> */}
       <div className='popUp'>
         {props.children}
       </div>
