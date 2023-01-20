@@ -2,6 +2,11 @@ import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { UserContext } from '../../providers/user.provider.jsx'
 
+/**
+ * @param {{
+ *  children: React.ReactNode;
+ * }} props Component props
+ */
 const Guard = (props) => {
     const userContext = useContext(UserContext)
     if (userContext.user?.email) {
