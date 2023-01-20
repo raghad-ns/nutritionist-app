@@ -63,7 +63,7 @@ const AddFood = (props) => {
         .replace(/^.+,/, "");
       base64String = 'data:image/jpeg;base64,' + base64String
       setImage(base64String);
-      console.log(base64String);
+      console.log('image' , base64String);
     }
     reader.readAsDataURL(file);
   }

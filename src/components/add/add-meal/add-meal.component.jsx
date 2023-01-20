@@ -54,7 +54,7 @@ const AddMeal = (props) => {
             }} />
             <div className="preview">
                 {
-                    meal
+                    meal && meal.image
                         ? <img src={meal.image} alt="selected food" />
                         : <Image size={70} color="#444" />
                 }

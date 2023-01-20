@@ -18,7 +18,7 @@ const MealCard = (props) => {
             <div className="imageWrapper">
                 {props.image
                     ? <img src={props.image} alt={props.name} />
-                    : <Image />
+                    : <Image size={70} color= '#444' />
                 }
             </div>
             <div className='mealDetails'>

@@ -56,19 +56,22 @@ export function PdfDocument(props) {
                 <Page key={index} style={styles.pdfPage}>
                     <View >
                         <Text style={{ fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' }}>{DAYS[index] + ' : '}</Text>
-                        {mealsForThisDay 
-                        ? mealsForThisDay.map((meal, index) =>
-                            <View key={index} style={styles.mealDetails}>
-                                <Image src={meal.image} style={styles.mealImage}></Image>
-                                <View style={styles.mealInfo}>
-                                    <Text style={styles.mealText}> {meal.name}</Text>
-                                    <Text style={styles.mealText}> Amount : {meal.amount}</Text>
-                                    <Text style={styles.mealText}> Calories : {meal.calories}</Text>
+                        {mealsForThisDay
+                            ? mealsForThisDay.map((meal, index) =>
+                                <View key={index} style={styles.mealDetails}>
+                                    {
+                                        meal.image &&
+                                        <Image src={meal.image} style={styles.mealImage}></Image>
+                                    }
+                                    <View style={styles.mealInfo}>
+                                        <Text style={styles.mealText}> {meal.name}</Text>
+                                        <Text style={styles.mealText}> Amount : {meal.amount}</Text>
+                                        <Text style={styles.mealText}> Calories : {meal.calories}</Text>
+                                    </View>
                                 </View>
-                            </View>
-                        )
-                        : <Text style={styles.mealText}>No meals for this day</Text>
-                    }
+                            )
+                            : <Text style={styles.mealText}>No meals for this day</Text>
+                        }
                     </View>
                 </Page>
             )}
