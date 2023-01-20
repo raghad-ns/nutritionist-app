@@ -44,18 +44,12 @@ const useFoodProcessing = (props) => {
     }
 
     function imageUploaded(e) {
-        let base64String = "";
-        var file = e.target.files[0];
-        console.log(file);
-        var reader = new FileReader();
-        reader.onload = function () {
-            base64String = reader.result.replace("data:", "")
-                .replace(/^.+,/, "");
-            base64String = 'data:image/jpeg;base64,' + base64String
-            setImage(base64String);
-            console.log('image', base64String);
-        }
+        const file = e.target.files[0];
+        const reader = new FileReader();
         reader.readAsDataURL(file);
+        reader.onload = () => {
+            setImage(reader.result);
+        };
     }
 
     return ({
