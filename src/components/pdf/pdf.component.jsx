@@ -49,6 +49,28 @@ const styles = StyleSheet.create({
     },
 });
 
+
+/**
+ * 
+ * @param {{
+ * program : {
+ * id : number ;
+ * patientInfo : {
+ * name : string ;
+ * phone : number ;
+ * email : string ;
+ * dof : Date
+ * city : string;};
+ * mealsPerDay : Array <{
+ * id : number;
+ * name : String;
+ * image : String;
+ * amount : number;
+ * calories : number;}> ;
+ * } ;
+ * }} props 
+ * @returns 
+ */
 export function PdfDocument(props) {
     return (
         <Document title={`${props.program.patientInfo.name}'s diet propgram`} >
@@ -56,7 +78,7 @@ export function PdfDocument(props) {
                 <Page key={index} style={styles.pdfPage}>
                     <View >
                         <Text style={{ fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' }}>{DAYS[index] + ' : '}</Text>
-                        {mealsForThisDay
+                        {mealsForThisDay.length
                             ? mealsForThisDay.map((meal, index) =>
                                 <View key={index} style={styles.mealDetails}>
                                     {
@@ -65,8 +87,8 @@ export function PdfDocument(props) {
                                     }
                                     <View style={styles.mealInfo}>
                                         <Text style={styles.mealText}> {meal.name}</Text>
-                                        <Text style={styles.mealText}> Amount : {meal.amount}</Text>
-                                        <Text style={styles.mealText}> Calories : {meal.calories}</Text>
+                                        <Text style={styles.mealText}> Amount : {meal.amount} grams</Text>
+                                        <Text style={styles.mealText}> Calories : {meal.calories} calories</Text>
                                     </View>
                                 </View>
                             )
