@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../components/providers/user.provider';
 import { USERS } from '../../data/users';
 import './login.css'
-const Login = (e) => {
+const Login = () => {
     const navigate = useNavigate();
     const userContext = useContext (UserContext);
     const login = (e) => {

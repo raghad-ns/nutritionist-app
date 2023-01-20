@@ -25,7 +25,7 @@ const DietProgramsProvider = (props) => {
     }, [dietPrograms])
 
     useEffect(() => {
-        dispatch({ type: 'SET', dietPrograms: programsMap[userEmail] })
+        dispatch({ type: 'SET', dietPrograms: dietPrograms })
     }, [userContext.user])
 
     return (

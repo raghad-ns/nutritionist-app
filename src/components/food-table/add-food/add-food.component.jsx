@@ -79,7 +79,7 @@ const AddFood = (props) => {
       <div className="imagePreview">
         {
           image
-            ? <img src={image} />
+            ? <img src={image} alt=''/>
             : <Image size={100} color = '#444'/>
         }
       </div>
