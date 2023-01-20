@@ -18,9 +18,7 @@ const DietProgramsProvider = (props) => {
     useEffect(() => {
         console.log('programs', dietPrograms);
         console.log('user', userContext.user);
-        const map = JSON.parse(localStorage.getItem('programsMap') || '{}')
-        const email = userContext.user?.email || '';
-        map[email] = dietPrograms;
+        programsMap[userEmail] = dietPrograms;
         localStorage.setItem('programsMap', JSON.stringify(programsMap))
     }, [dietPrograms])
 
