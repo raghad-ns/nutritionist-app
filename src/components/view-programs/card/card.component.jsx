@@ -31,6 +31,7 @@ import './card.css'
  * @returns 
  */
 const ProgramCard = (props) => {
+
   const deleteProgram = () => {
     props.setItemMayBeDeleted(props.program.id)
     props.setDeleteConfirmation(true)
@@ -54,7 +55,7 @@ const ProgramCard = (props) => {
           <TrashSimple size={24} color='red' />
         </button>
         <PDFDownloadLink
-        className='pdfButton'
+          className='pdfButton'
           document={<PdfDocument program={props.program} />}
           fileName={props.program.patientInfo.name + '.pdf'}
         >

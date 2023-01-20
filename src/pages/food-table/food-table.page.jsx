@@ -10,15 +10,23 @@ const FoodTable = () => {
 
     const [action, setAction] = useState({ type: 'none', data: null });
     const foodContext = useContext(FoodContext);
-    const [deleteConfirmation , setDeleteConfirmation] = useState (false);
-    const [itemMayBeDeleted , setItemMayBeDeleted] = useState (null);
+    const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+    const [itemMayBeDeleted, setItemMayBeDeleted] = useState(null);
 
     return (
         <div className='foodTable'>
             {action.type !== 'none' && <div className="addFoodWrapper"><AddFood setAction={setAction} action={action} /></div>}
-            {deleteConfirmation && <DeleteConfirmation source = 'food' id={itemMayBeDeleted} setDeleteConfirmation={setDeleteConfirmation} />}
+            {
+                deleteConfirmation &&
+                <DeleteConfirmation source='food' id={itemMayBeDeleted} setDeleteConfirmation={setDeleteConfirmation} />
+            }
             <div className='innerButtonWrapper' >
-                <button className='innerButton' onClick={() => setAction({ type: 'add', data: null })}>Add <Plus size={18} weight='bold' /></button>
+                <button
+                    className='innerButton'
+                    onClick={() => setAction({ type: 'add', data: null })}
+                >
+                    Add <Plus size={18} weight='bold' />
+                </button>
             </div>
             <table cellSpacing={15} >
                 <thead>
@@ -32,7 +40,13 @@ const FoodTable = () => {
                 </thead>
                 <tbody>
                     {foodContext.food.map((foodItem, index) =>
-                        <FoodRow key={index} data={foodItem} setAction={setAction} setDeleteConfirmation={setDeleteConfirmation} setItemMayBeDeleted = {setItemMayBeDeleted}/>)}
+                        <FoodRow
+                            key={index}
+                            data={foodItem}
+                            setAction={setAction}
+                            setDeleteConfirmation={setDeleteConfirmation}
+                            setItemMayBeDeleted={setItemMayBeDeleted}
+                        />)}
                 </tbody>
             </table>
         </div>

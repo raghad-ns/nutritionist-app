@@ -18,18 +18,20 @@ import { Image, PencilSimple, TrashSimple } from 'phosphor-react'
  * @returns 
  */
 const FoodRow = (props) => {
+
     const deleteFood = () => {
         props.setDeleteConfirmation(true)
         props.setItemMayBeDeleted(props.data.id)
     }
+
     return (
         <tr className='foodRow'>
             <td>{props.data.name}</td>
             <td> {
-                props.data.image 
-                ? <img src={props.data.image} alt={props.data.name} />
-                : <Image size={50} color = '#444'/>
-                }</td>
+                props.data.image
+                    ? <img src={props.data.image} alt={props.data.name} />
+                    : <Image size={50} color='#444' />
+            }</td>
             <td>{props.data.amount}</td>
             <td>{props.data.calories}</td>
             <td>

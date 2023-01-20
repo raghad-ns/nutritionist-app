@@ -15,16 +15,16 @@ const SpecificProgram = () => {
     <div className='specificProgram'>
       <h1>{program.patientInfo.name}'s program : </h1>
       {
-        program.mealsPerDay.map((mealsForThisDay , index) =>
+        program.mealsPerDay.map((mealsForThisDay, index) =>
           <div className="mealsForThisDay" key={index}>
             <div className="day">
               {DAYS[index]}
             </div>
             <div className="meals">
               {
-                mealsForThisDay.length 
-                ?mealsForThisDay.map((meal , index) => <MealCard {...meal} key = {index}/>)
-                : <span> no meals for this day</span>
+                mealsForThisDay.length
+                  ? mealsForThisDay.map((meal, index) => <MealCard {...meal} key={index} />)
+                  : <span> no meals for this day</span>
               }
             </div>
           </div>

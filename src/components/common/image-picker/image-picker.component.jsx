@@ -5,12 +5,14 @@ import './image-picker.css'
 * @param {React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {label : string;}} props 
 */
 const ImagePicker = (props) => {
-    const {label , ...imagePickerProps} = props;
+
+  const { label, ...imagePickerProps } = props;
+
   return (
     <div className='imagePickerWrapper'>
-        <span>{label}</span>
-        <label htmlFor="imageInput" className='innerButton'>select image</label>
-        <input type="file" id='imageInput' {...imagePickerProps}/>
+      <span>{label}</span>
+      <label htmlFor="imageInput" className='innerButton'>select image</label>
+      <input type="file" id='imageInput' {...imagePickerProps} />
     </div>
   )
 }

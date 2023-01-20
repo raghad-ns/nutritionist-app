@@ -15,15 +15,23 @@ import './daily-meals.css'
  * }} props 
  */
 const DailyMeals = (props) => {
+
     let calories = 0;
     props.meals.forEach(meal =>
         calories = calories + Number(meal.calories)
     );
+
     return (
         <div className="dailyMealsWrapper">
             <div className='dailyMeals'>
                 <div className="mealsHeader">
-                    <button className='innerButton' type='button' onClick={() => props.setAddMeal(true)}><Plus size={30} weight='bold' /></button>
+                    <button
+                        className='innerButton'
+                        type='button'
+                        onClick={() => props.setAddMeal(true)}
+                    >
+                        <Plus size={30} weight='bold' />
+                    </button>
                     <div className="stats">
                         <span>Total calories per this day :</span>
                         <span>{calories} cal</span>

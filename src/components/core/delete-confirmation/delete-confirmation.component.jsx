@@ -14,8 +14,10 @@ import './delete-confirmation.css'
  * @returns 
  */
 const DeleteConfirmation = (props) => {
+
     const foodContext = useContext(FoodContext);
     const dietProgramsContext = useContext(DietProgramsContext)
+
     const deleteSelected = () => {
         if (props.source === 'food') {
             foodContext.dispatch({ type: 'DELETE', id: props.id })
@@ -27,14 +29,16 @@ const DeleteConfirmation = (props) => {
 
         update()
     }
+
     const update = () => {
         props.setDeleteConfirmation(false)
     }
+
     return (
         <PopUp>
             <span>are you sure that you want to delete this item ?</span>
             <div className="deleteConfirmationButtons">
-                <button className='innerButton'  onClick={deleteSelected}>Yes</button>
+                <button className='innerButton' onClick={deleteSelected}>Yes</button>
                 <button className='innerButton' onClick={update}>No</button>
             </div>
         </PopUp>

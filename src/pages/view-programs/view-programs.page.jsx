@@ -7,6 +7,7 @@ import SearchBar from '../../components/view-programs/search-bar/search-bar.comp
 import DeleteConfirmation from '../../components/core/delete-confirmation/delete-confirmation.component'
 
 const ViewPrograms = () => {
+
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
     const [itemMayBeDeleted, setItemMayBeDeleted] = useState(null);
     const [param] = useSearchParams();
@@ -18,7 +19,13 @@ const ViewPrograms = () => {
 
     return (
         <div className="viewProgramsWrapper">
-            {deleteConfirmation && <DeleteConfirmation id={itemMayBeDeleted} setDeleteConfirmation={setDeleteConfirmation} source={'dietPrograms'} />}
+            {
+                deleteConfirmation &&
+                <DeleteConfirmation
+                    id={itemMayBeDeleted}
+                    setDeleteConfirmation={setDeleteConfirmation}
+                    source={'dietPrograms'} />
+            }
             <SearchBar />
             <div className='viewPrograms'>
                 {filteredPrograms.map((program, index) =>

@@ -14,7 +14,7 @@ const Guard = (props) => {
     }
     else {
         alert('please login to get access to this page :)');
-        return (<Navigate to={'/login'}/>)
+        return (<Navigate to={'/login'} />)
     }
 }
 

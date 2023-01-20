@@ -7,8 +7,10 @@ import MyDropdown from '../dropdown/dropdown.component'
 import { UserContext } from '../../providers/user.provider'
 
 const Header = () => {
+
     const navigate = useNavigate();
     const userContext = useContext(UserContext);
+
     return (
         <div className='header'>
             <div className='title'>
@@ -28,7 +30,11 @@ const Header = () => {
                 }
                 {
                     window.location.pathname !== '/' &&
-                    <button onClick={() => navigate('/')} > <House size={40} color='white' weight='fill' className="homeButton" /> </button>
+                    <button
+                        onClick={() => navigate('/')}
+                    >
+                        <House size={40} color='white' weight='fill' className="homeButton" />
+                    </button>
                 }
                 {window.location.pathname !== '/login' && <MyDropdown />}
             </div>

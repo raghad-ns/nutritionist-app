@@ -22,10 +22,12 @@ import { FoodContext } from '../../providers/food.provider';
  * @returns 
  */
 const AddMeal = (props) => {
+
     const foodContext = useContext(FoodContext);
     const [meal, setMeal] = useState(null);
     const [calories, setCalories] = useState(0);
     const [amount, setAmount] = useState(0);
+
     /**
      * @param {React.ChangeEvent<HTMLInputElement>} e 
      */
@@ -37,6 +39,7 @@ const AddMeal = (props) => {
         props.setMealsPerDay(tempMealsPerDay)
         props.setAddMeal(false)
     }
+
     return (
         <PopUp>
             <h2>Add meal</h2>
@@ -44,7 +47,7 @@ const AddMeal = (props) => {
                 onChange={(e) =>
                     setMeal(foodContext.food.find(meal => meal.name === e.target.value))
                 }>
-                    <option value="none" disabled hidden>Select a meal</option>
+                <option value="none" disabled hidden>Select a meal</option>
                 {foodContext.food.map((meal, index) =>
                     <option value={meal.name} key={index}>{meal.name}</option>)}
             </Select>

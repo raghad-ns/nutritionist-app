@@ -9,10 +9,12 @@ export const FoodContext = React.createContext(null);
 */
 
 const FoodProvider = (props) => {
+
     const [food, dispatch] = useReducer(reducer, JSON.parse(localStorage.getItem('food') || '[]'));
     useEffect(() => {
         localStorage.setItem('food', JSON.stringify(food || []))
     }, [food])
+
     return (
         <FoodContext.Provider value={{ food: food, dispatch: dispatch }}>
             {props.children}

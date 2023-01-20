@@ -6,6 +6,7 @@ import React from 'react';
  * @param {React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {label? : string;}} props 
  */
 const Input = (props) => {
+  
   const { label, ...inputProps } = props;
 
   return (

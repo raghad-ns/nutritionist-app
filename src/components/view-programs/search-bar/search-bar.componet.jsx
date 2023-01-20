@@ -3,6 +3,7 @@ import Input from '../../common/input/input.component'
 import './search-bar.css'
 
 const SearchBar = () => {
+
     const [param, setParam] = useSearchParams()
     const updateSearchParams = (e) => {
         const tempParam = new URLSearchParams(param);

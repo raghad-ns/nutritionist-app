@@ -9,6 +9,7 @@ export const DietProgramsContext = React.createContext(null)
 * }} props Component props
 */
 const DietProgramsProvider = (props) => {
+
     const userContext = useContext(UserContext);
     const programsMap = JSON.parse(localStorage.getItem('programsMap') || '{}')
     const userEmail = userContext.user?.email || '';

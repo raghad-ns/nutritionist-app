@@ -7,11 +7,13 @@ export const UserContext = React.createContext(null);
 * }} props Component props
 */
 const UserProvider = (props) => {
+
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user') || '{}'));
-    useEffect (()=> {
+    useEffect(() => {
         console.log('user provider');
-        localStorage.setItem('user' , JSON.stringify(user || {}))
-    } , [user])
+        localStorage.setItem('user', JSON.stringify(user || {}))
+    }, [user])
+
     return (
         <UserContext.Provider value={{ user: user, setUser: setUser }}>
             {props.children}

@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import './home.css'
 
 const Home = () => {
+
     const navigate = useNavigate();
+
     return (
         <div className='home'>
             <h1>The health outside starts from the inside</h1>

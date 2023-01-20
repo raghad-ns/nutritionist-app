@@ -28,15 +28,33 @@ const AddFood = (props) => {
   return (
     <PopUp>
       <h2>{props.action.type === 'add' ? 'Add new food type' : 'edit'}</h2>
-      <Input label='Food name' name='name' type='text' value={foodProcess.data.name.value} onChange={foodProcess.data.name.onChange} />
-      <Input label='amount (gm)' name='amount' type='number' value={foodProcess.data.amount.value} onChange={foodProcess.data.amount.onChange} />
-      <Input label='calories (cal)' name='calories' type='number' value={foodProcess.data.calories.value} onChange={foodProcess.data.calories.onChange} />
+      <Input
+        label='Food name'
+        name='name'
+        type='text'
+        value={foodProcess.data.name.value}
+        onChange={foodProcess.data.name.onChange}
+      />
+      <Input
+        label='amount (gm)'
+        name='amount'
+        type='number'
+        value={foodProcess.data.amount.value}
+        onChange={foodProcess.data.amount.onChange}
+      />
+      <Input
+        label='calories (cal)'
+        name='calories'
+        type='number'
+        value={foodProcess.data.calories.value}
+        onChange={foodProcess.data.calories.onChange}
+      />
       <ImagePicker label='image' name='image' onChange={foodProcess.data.image.onChange} />
       <div className="imagePreview">
         {
           foodProcess.data.image.value
-            ? <img src={foodProcess.data.image.value} alt=''/>
-            : <Image size={100} color = '#444'/>
+            ? <img src={foodProcess.data.image.value} alt='' />
+            : <Image size={100} color='#444' />
         }
       </div>
       <div className="actionButtons">
