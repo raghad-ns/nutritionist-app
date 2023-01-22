@@ -14,10 +14,12 @@
     align-items: flex-start;
     justify-content: flex-start;
 }
+
 .popUp>.preview>img {
     width: 70px;
     border-radius: 10px;
 }
+
 .popUp>.actionButtons {
     display: flex;
     justify-content: space-around;
