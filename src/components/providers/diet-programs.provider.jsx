@@ -17,8 +17,6 @@ const DietProgramsProvider = (props) => {
     const [dietPrograms, dispatch] = useReducer(reducer, currentprograms);
 
     useEffect(() => {
-        console.log('programs', dietPrograms);
-        console.log('user', userContext.user);
         programsMap[userEmail] = dietPrograms;
         localStorage.setItem('programsMap', JSON.stringify(programsMap))
     }, [dietPrograms])

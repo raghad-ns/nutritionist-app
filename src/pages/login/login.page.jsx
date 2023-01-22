@@ -17,7 +17,6 @@ const Login = () => {
         const currentUser = USERS.find(someUser => (someUser.email === user.email && someUser.password === user.password))
         if (currentUser) {
             userContext.setUser(currentUser)
-            console.log(user);
             navigate('/');
         }
         else {

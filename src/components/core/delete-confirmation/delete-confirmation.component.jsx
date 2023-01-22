@@ -23,7 +23,6 @@ const DeleteConfirmation = (props) => {
             foodContext.dispatch({ type: 'DELETE', id: props.id })
         }
         else if (props.source === 'dietPrograms') {
-            console.log('deleting');
             dietProgramsContext.dispatch({ type: 'DELETE', id: props.id })
         }
 

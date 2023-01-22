@@ -43,7 +43,6 @@ const useAddDietProgram = () => {
      * @param {React.ChangeEvent<HTMLInputElement>} e 
      */
     const reset = (e) => {
-        console.log('reset');
         e.target.city.value = e.target.city.defaultSelected
         e.target.dob.value = null
         e.target.email.value = null

@@ -10,7 +10,6 @@ const UserProvider = (props) => {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user') || '{}'));
     useEffect(() => {
-        console.log('user provider');
         localStorage.setItem('user', JSON.stringify(user || {}))
     }, [user])
 
