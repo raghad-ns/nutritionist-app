@@ -74,28 +74,36 @@ const styles = StyleSheet.create({
 export function PdfDocument(props) {
     return (
         <Document title={`${props.program.patientInfo.name}'s diet propgram`} >
-            {props.program.mealsPerDay.map((mealsForThisDay, index) =>
-                <Page key={index} style={styles.pdfPage}>
-                    <View >
-                        <Text style={{ fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' }}>{DAYS[index] + ' : '}</Text>
-                        {mealsForThisDay.length
-                            ? mealsForThisDay.map((meal, index) =>
-                                <View key={index} style={styles.mealDetails}>
-                                    {
-                                        meal.image &&
-                                        <Image src={meal.image} style={styles.mealImage}></Image>
-                                    }
-                                    <View style={styles.mealInfo}>
-                                        <Text style={styles.mealText}> {meal.name}</Text>
-                                        <Text style={styles.mealText}> Amount : {meal.amount} grams</Text>
-                                        <Text style={styles.mealText}> Calories : {meal.calories} calories</Text>
+            {props.program.mealsPerDay.map((mealsForThisDay, index) => {
+                let calories = 0;
+                mealsForThisDay.forEach(meal =>
+                    calories = calories + Number(meal.calories)
+                );
+                return (
+                    <Page key={index} style={styles.pdfPage}>
+                        <View >
+                            <Text style={{ fontSize: 20, marginBottom: 20, textAlign: 'center', fontWeight: 'bold' }}>{DAYS[index] + ' : '}</Text>
+                            <Text style={styles.mealText}>Total calories : {calories} calories</Text>
+                            {mealsForThisDay.length
+                                ? mealsForThisDay.map((meal, index) =>
+                                    <View key={index} style={styles.mealDetails}>
+                                        {
+                                            meal.image &&
+                                            <Image src={meal.image} style={styles.mealImage}></Image>
+                                        }
+                                        <View style={styles.mealInfo}>
+                                            <Text style={styles.mealText}> {meal.name}</Text>
+                                            <Text style={styles.mealText}> Amount : {meal.amount} grams</Text>
+                                            <Text style={styles.mealText}> Calories : {meal.calories} calories</Text>
+                                        </View>
                                     </View>
-                                </View>
-                            )
-                            : <Text style={styles.mealText}>No meals for this day</Text>
-                        }
-                    </View>
-                </Page>
+                                )
+                                : <Text style={styles.mealText}>No meals for this day</Text>
+                            }
+                        </View>
+                    </Page>
+                )
+            }
             )}
 
         </Document>
