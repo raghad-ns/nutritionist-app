@@ -16,10 +16,7 @@ import './daily-meals.css'
  */
 const DailyMeals = (props) => {
 
-    let calories = 0;
-    props.meals.forEach(meal =>
-        calories = calories + Number(meal.calories)
-    );
+    const calories = props.meals.reduce ((total , meal) => total + meal.calories , 0);
 
     return (
         <div className="dailyMealsWrapper">

@@ -75,10 +75,7 @@ export function PdfDocument(props) {
     return (
         <Document title={`${props.program.patientInfo.name}'s diet propgram`} >
             {props.program.mealsPerDay.map((mealsForThisDay, index) => {
-                let calories = 0;
-                mealsForThisDay.forEach(meal =>
-                    calories = calories + Number(meal.calories)
-                );
+                const calories = mealsForThisDay.reduce ((total , meal) => total + meal.calories , 0);
                 return (
                     <Page key={index} style={styles.pdfPage}>
                         <View >

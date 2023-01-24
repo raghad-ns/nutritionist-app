@@ -16,10 +16,7 @@ const SpecificProgram = () => {
       <h1>{program.patientInfo.name}'s program : </h1>
       {
         program.mealsPerDay.map((mealsForThisDay, index) => {
-          let calories = 0;
-          mealsForThisDay.forEach(meal =>
-            calories = calories + Number(meal.calories)
-          );
+          const calories = mealsForThisDay.reduce ((total , meal) => total + meal.calories , 0);
           return (
             <div className="mealsForThisDay" key={index}>
               <div className="dayHeader">
