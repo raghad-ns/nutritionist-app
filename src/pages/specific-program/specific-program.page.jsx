@@ -15,19 +15,32 @@ const SpecificProgram = () => {
     <div className='specificProgram'>
       <h1>{program.patientInfo.name}'s program : </h1>
       {
-        program.mealsPerDay.map((mealsForThisDay, index) =>
-          <div className="mealsForThisDay" key={index}>
-            <div className="day">
-              {DAYS[index]}
+        program.mealsPerDay.map((mealsForThisDay, index) => {
+          let calories = 0;
+          mealsForThisDay.forEach(meal =>
+            calories = calories + Number(meal.calories)
+          );
+          return (
+            <div className="mealsForThisDay" key={index}>
+              <div className="dayHeader">
+                <div className="day">
+                  <span>{DAYS[index]}</span>
+                </div>
+                <div className='totalCalories'>
+                  Total calories : {calories} calories
+                </div>
+              </div>
+              <div className="meals">
+                {
+                  mealsForThisDay.length
+                    ? mealsForThisDay.map((meal, index) => <MealCard {...meal} key={index} />)
+                    : <span> no meals for this day</span>
+                }
+              </div>
             </div>
-            <div className="meals">
-              {
-                mealsForThisDay.length
-                  ? mealsForThisDay.map((meal, index) => <MealCard {...meal} key={index} />)
-                  : <span> no meals for this day</span>
-              }
-            </div>
-          </div>
+          )
+        }
+
         )
       }
     </div>

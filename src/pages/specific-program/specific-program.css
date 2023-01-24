@@ -21,12 +21,28 @@
     padding: 10px;
 }
 
-.specificProgram>.mealsForThisDay>.day {
+.specificProgram>.mealsForThisDay>.dayHeader {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #aaa;
+}
+
+.specificProgram>.mealsForThisDay>.dayHeader>.day {
     font-size: 30px;
     font-weight: bold;
     font-style: italic;
     text-transform: capitalize;
-    border-bottom: 1px solid #aaa;
+}
+
+.specificProgram>.mealsForThisDay>.dayHeader>.totalCalories {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px #ccc;
+}
+
+.specificProgram>.mealsForThisDay>.day>.totalCalories {
+    justify-self: flex-end;
 }
 
 .specificProgram>.mealsForThisDay>.meals {
