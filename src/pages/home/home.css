@@ -1,8 +1,8 @@
 .home>h1 {
-    position: fixed;
-    bottom: 610px;
-    left: 80px;
     font-size: 35px;
+    margin-left: 140px;
+    margin-top: 70px;
+    margin-bottom: 50px;
     color: rgb(27, 109, 87);
     font-style: italic;
     font-weight: 100;
@@ -16,8 +16,8 @@
     background-repeat: no-repeat;
     height: 91vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
