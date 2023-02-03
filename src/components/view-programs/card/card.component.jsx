@@ -45,7 +45,7 @@ const ProgramCard = (props) => {
     <div className='programCard'>
       <div className='details'>
         <span>Name : {props.program.patientInfo.name} </span>
-        <span>Weekly calories : {calories} </span>
+        <span>Weekly calories : {calories} calories </span>
         <Link to={`/dietProgram/${props.program.id}`}>View details</Link>
       </div>
       <div className='actionButtons'>

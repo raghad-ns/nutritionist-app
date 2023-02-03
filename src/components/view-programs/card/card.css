@@ -1,11 +1,12 @@
 .programCard {
     display: inline-flex;
     justify-content: space-between;
-    max-width: 300px;
+    max-width: 350px;
     padding: 10px;
     margin: 10px;
     background-color: rgba(84, 209, 176, 0.371);
     border-radius: 20px;
+    text-align: left;
 }
 
 .programCard:hover {
