@@ -1,4 +1,4 @@
-we have 3 pages 
+we have 3 main pages 
 new diet program => new-diet 
 manage food table => food-table 
 view existing programs => view-programs
@@ -13,17 +13,22 @@ functionality :
 - add new food button 
 - the feature to edit any one of the existing food types 
 - the feature to delete any one of the existing food types 
+- view delete confirmation as a pop up to ensure that the user want to delete this food type 
+- anyone can view this page , even if he/she is not logged in .
+- but the user has to login in order to add , edit & delete a food type . 
 
 
 view existing programs :
 
-programs : array of objects (patient , total calories }
+programs : array of objects (patient , mealsPerDay }
 - home button that goes back to the root page 
 - search bar that searches by the name of the patient
-- view a table that contains the name of the patient and total calories
+- view card for each patient that contains his/her name , weekly calories 
+- when click (view details) it will take you to a page that contains patient's meals on each week day . // this page is just to view 
 - the feature of deleting any diet program
-// needs some researches , the last thing to do 
-- the feature of converting its diet program to pdf file  
+- view delete confirmation as a pop up to ensure that the user want to delete this food type 
+- the feature of converting its diet program to pdf file & download it with patien's name  
+- the user must be logged in to access this page , since each user has his/her own patients . 
 
 
  
@@ -31,19 +36,58 @@ new diet program :
 
 patient program : object {
 				patient info : {name , phone , email , date of birth , city} 
-				program : array of object {day , array of food} }
-- form contains : name (text) , phone (number) , email (email) , date of birth (date picker) ,
-			city (select)
-- days of the week as a radio buttons 
-- div contains the meals depending on what day (radio button) is clicked 
+				meals per day : array of 7 arrays each array contain the meals that of the patient in this day
+- form contains : {name (text) , phone (number) , email (email) , date of birth (date picker) ,
+			city (select)} these are patientInfo 
+- days of the week as a radio buttons (tabs) 
+- div contains the meals depending on which day (radio button) is selected 
 - view the total calories of that day & number of meals 
+- the user must be logged in to have the access to this page , since the user add patients to his own array of patients 
+- when click (save) the data filled in the form (new patient data) is add to the array of this user's patients 
+- when click (save) after the data is saved , it takes you to the diet programs page . 
 
 
-components : 
-- patient form 
-- view meal 
-- food row 
-- program row 
+pages & components for each page : 
+	- login 
+	- home 
+	- add (to add new programs , must be logged in)
+		- patientInfo : the div that contains patient info inputs . 
+		- tabs : the tabs row that contains week days 
+		- DailyMeals : the div that contains the meals for the selected day .
+		- mealCard : displays meal's info .
+		- addMeal : the form that appears when add new meal for the selected day . 
+	
+	- foodTable (doesn't require login to view it , but you have to log in in order to perform (add , edit , delete))
+		- addFood : the form that appears when add or edit a food type .
+		- foodRow : the table row that displays the food type's info . 
+	
+	- viewPrograms (must be logged in)
+		- card : patient card that displays patient's name , weekly calories & other features 
+		         like (delete , print diet program as pdf , view program in an independent page)
+		- searchBar : contains text input that accepts patient name to view patients that may match .
+	
+	- specificProgram (to view the meals for the selected patient , must be logged in)
+	- not found 
 
 
-foodTable must have a reducer to (add  , delete , edit)
+website header :
+- website logo & name : always appear . 
+- username : appears only if the user is logged in . 
+- home page icone : apears when the user in any page except home page , even if login page .
+- drop down list : appears if the user is not in the login page . 
+
+user access permissions : 
+- the user must be loggin in to access new diet program page & view diet programs Page . 
+- the user doesn't have to log in to view food table since there is no sensitive data , 
+  but he/she doesn't have the permission to add , edit , delete unless he/she logged in .
+
+
+react used concepts & hooks :
+ - useState 
+ - usesEffect 
+ - useMemo 
+ - useContext (context & providers) , I defined 3 providers (UserContext , FoodContext , DietProgramsContext)
+ - useReducer , I defined 2 reducers (dietPrograms reducer , food reducer)
+ - useSearchParams (in the search bar of view existing programs page) .
+ - useParams (in view specific program page) 
+ - custom hooks , I defined 2 hooks (add-diet-program , food-processing)
