@@ -13,7 +13,7 @@ const Add = () => {
     const addProgram = useAddDietProgram();
 
     return (
-        <form className='add' onSubmit={addProgram.handleAddProgram} action='/viewPrograms'>
+        <form className='add' onSubmit={addProgram.handleAddProgram} action='/viewPrograms' onReset={addProgram.reset}>
             {addMeal &&
                 <AddMeal
                     setAddMeal={setAddmeal}
