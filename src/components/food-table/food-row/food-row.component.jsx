@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './food-row.css'
 import { Image, PencilSimple, TrashSimple } from 'phosphor-react'
+import { UserContext } from '../../providers/user.provider'
 
 /**
  * 
@@ -18,10 +19,24 @@ import { Image, PencilSimple, TrashSimple } from 'phosphor-react'
  * @returns 
  */
 const FoodRow = (props) => {
-
+    const userContext = useContext (UserContext);
     const deleteFood = () => {
-        props.setDeleteConfirmation(true)
-        props.setItemMayBeDeleted(props.data.id)
+        if (userContext.user?.email) {
+            props.setDeleteConfirmation(true)
+            props.setItemMayBeDeleted(props.data.id)
+        }
+        else {
+            alert ('You are not allowed to delete any item , login to have the ability to perform this process');
+        }
+    }
+
+    const editFood = () => {
+        if (userContext.user?.email) {
+            props.setAction({ type: 'edit', data: props.data })
+        }
+        else {
+            alert ('You are not allowed to edit any item , login to have the ability to perform this process');
+        }
     }
 
     return (
@@ -36,7 +51,7 @@ const FoodRow = (props) => {
             <td>{props.data.calories}</td>
             <td>
                 <div className="action">
-                    <button onClick={() => props.setAction({ type: 'edit', data: props.data })}>
+                    <button onClick={editFood}>
                         <PencilSimple size={25} color='#eddd0e' />
                     </button>
                     <button onClick={deleteFood} >

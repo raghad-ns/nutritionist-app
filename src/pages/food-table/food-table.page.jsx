@@ -5,13 +5,24 @@ import FoodRow from '../../components/food-table/food-row/food-row.component'
 import AddFood from '../../components/food-table/add-food/add-food.component'
 import DeleteConfirmation from '../../components/core/delete-confirmation/delete-confirmation.component'
 import { FoodContext } from '../../components/providers/food.provider'
+import { UserContext } from '../../components/providers/user.provider'
 
 const FoodTable = () => {
 
-    const [action, setAction] = useState({ type: 'none', data: null });
     const foodContext = useContext(FoodContext);
+    const userContext = useContext (UserContext);
+    const [action, setAction] = useState({ type: 'none', data: null });
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
     const [itemMayBeDeleted, setItemMayBeDeleted] = useState(null);
+
+    const addOrNot = () => {
+        if (userContext.user?.email) {
+            setAction({ type: 'add', data: null })
+        }
+        else {
+            alert ('You are not allowed to add any item , login to have the ability to perform this process');
+        }
+    }
 
     return (
         <div className='foodTable'>
@@ -23,7 +34,7 @@ const FoodTable = () => {
             <div className='innerButtonWrapper' >
                 <button
                     className='innerButton'
-                    onClick={() => setAction({ type: 'add', data: null })}
+                    onClick={addOrNot}
                 >
                     Add <Plus size={18} weight='bold' />
                 </button>
