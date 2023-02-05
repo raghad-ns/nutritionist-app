@@ -1,5 +1,6 @@
 .notFound {
     background-color: white;
+    height: 100vh;
 }
 .notFound>img {
     width: 87%;
