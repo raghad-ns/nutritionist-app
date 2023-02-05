@@ -6,7 +6,7 @@ view existing programs => view-programs
 
 manage food table :
 
-food : array of object {name , image , amont , calories }
+food : array of object {name , image , amount , calories }
 functionality : 
 - view a table that contains all existing foods
 - home button that goes back to the root page 
@@ -27,7 +27,7 @@ programs : array of objects (patient , mealsPerDay }
 - when click (view details) it will take you to a page that contains patient's meals on each week day . // this page is just to view 
 - the feature of deleting any diet program
 - view delete confirmation as a pop up to ensure that the user want to delete this food type 
-- the feature of converting its diet program to pdf file & download it with patien's name  
+- the feature of converting its diet program to pdf file & download it with patient's name  
 - the user must be logged in to access this page , since each user has his/her own patients . 
 
 
@@ -73,11 +73,11 @@ pages & components for each page :
 website header :
 - website logo & name : always appear . 
 - username : appears only if the user is logged in . 
-- home page icone : apears when the user in any page except home page , even if login page .
+- home page icon : appears when the user in any page except home page , even if login page .
 - drop down list : appears if the user is not in the login page . 
 
 user access permissions : 
-- the user must be loggin in to access new diet program page & view diet programs Page . 
+- the user must be logged in to access new diet program page & view diet programs Page . 
 - the user doesn't have to log in to view food table since there is no sensitive data , 
   but he/she doesn't have the permission to add , edit , delete unless he/she logged in .
 
