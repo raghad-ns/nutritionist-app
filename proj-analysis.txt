@@ -91,3 +91,7 @@ react used concepts & hooks :
  - useSearchParams (in the search bar of view existing programs page) .
  - useParams (in view specific program page) 
  - custom hooks , I defined 2 hooks (add-diet-program , food-processing)
+
+ another learned concepts : 
+ array.reduce function 
+ jsDoc for functions & components
